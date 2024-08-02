@@ -1,0 +1,684 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+header {
+    background-color:rgb(29, 26, 26);
+    
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    */
+
+/* Dropdown Styles */
+.dropbtn {
+    background-color:#00000033;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+        .contain {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .hammer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+        }
+
+        .blog--text {
+            line-height: 1.7;
+            margin: 20px 0;
+            color:black;
+            font-size: larger;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        h3{
+            font-size:1.5em;
+             margin:20px 0;
+           display: flex;
+            align-items: center;
+        }
+
+        .subheading-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        padding: 20px;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+        
+
+
+    }
+
+    .sidebar {
+        
+        margin-top: 20px;
+        padding-left: 0;
+        
+    }
+
+
+    /*realed article*/
+
+    .related-articles {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px; /* Adjusted for larger screens */
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide article {
+            flex: 1 0 33%; /* Default to 3 articles per row */
+            box-sizing: border-box;
+            padding: 10px;
+            max-width: 33%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide article {
+                flex: 1 0 100%; /* 1 article per row */
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    <style>
+    
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+    .ooter {
+        background-color:rgb(44, 39, 42);
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            
+        }
+
+        .about-us,
+        .quick-links,
+        .share {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-us h3,
+        .quick-links h3,
+        .share h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 5px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .ocial-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .ocial-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .ocial-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .ocial-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /*fq */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #b37b7b44;
+            color: #444035;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question {
+            margin: 0;
+        }
+
+        .plus-sign {
+            font-size: 1.5em;
+        }
+
+        .answer {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ask-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ask-question input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ask-question input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: rgb(108, 209, 108);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: white;">    StrangeSage</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="post.html" class="dropbtn">Latest</a>
+                        <div class="dropdown-content">
+                            
+                        </div>
+                        <li><a href="aboutus.html">Posts</a></li>
+                    <li><a href="contact.html"></a>Contact</li>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="contain">
+        <div class="hammer">
+            <h1>How to Maintain Healthy Skin
+            </h1>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/044/575/690/small/woman-applying-sunscreen-on-her-cheek-in-focus-skin-care-concept-image-photo.jpg"  class="ghost-image" alt="">
+            <p class="blog--text"><b>Introduction:</b>Maintaining healthy skin is essential for overall well-being and confidence. Healthy skin not only looks vibrant and youthful but also acts as a protective barrier against environmental factors and potential irritants. To achieve and sustain optimal skin health, it's important to adopt a consistent skincare routine that includes cleansing, moisturizing, and sun protection. Additionally, incorporating a balanced diet, staying hydrated, and avoiding harmful habits such as smoking can significantly enhance skin health. This guide provides practical tips and strategies to help you care for your skin effectively, ensuring it remains healthy, radiant, and resilient throughout the years.
+
+            </p>
+            
+            <h3>1. Cleanse Your Skin Regularly
+            </h3>
+            <p class="blog--text">Regular cleansing removes dirt, oil, and impurities that can clog pores and lead to skin issues. Use a gentle cleanser suited to your skin type—whether it's oily, dry, or combination—twice daily to maintain clean and healthy skin. Avoid harsh soaps that can strip natural oils and cause dryness. Ensure you cleanse your skin in the morning to remove overnight buildup and at night to wash away daily grime. Proper cleansing helps prevent breakouts and allows your skincare products to work more effectively, contributing to a clearer and more balanced complexion.</p>
+            <h3>2. Moisturize Daily
+            </h3>
+            <p class="blog--text">Moisturizing is crucial for maintaining skin hydration and barrier function. Apply a suitable moisturizer for your skin type after cleansing to lock in moisture and prevent dryness. Choose a product with ingredients like hyaluronic acid or glycerin for hydration, and consider options with SPF for added sun protection. Moisturizing helps keep your skin soft, supple, and resilient, reducing the appearance of fine lines and preventing issues like flakiness or irritation. Incorporate moisturizing into your daily routine, both in the morning and before bed, to support overall skin health and maintain a youthful appearance.</p>
+            <h3></h3>
+            <p class="blog--text">3. Protect Your Skin from the Sun</p>
+            <h3></h3>
+            <p class="blog--text">Sun protection is essential for preventing premature aging and reducing the risk of skin cancer. Apply a broad-spectrum sunscreen with an SPF of at least 30 daily, even on cloudy days or when staying indoors, as UV rays can penetrate windows. Reapply sunscreen every two hours if you're outdoors or after swimming or sweating. Wearing protective clothing, sunglasses, and hats can also shield your skin from harmful UV radiation. By incorporating sun protection into your skincare routine, you help prevent sunspots, wrinkles, and other skin damage, maintaining a healthier and more youthful complexion.</p>
+            <h3>4. Stay Hydrated
+            </h3>
+            <p class="blog--text">Proper hydration is key to maintaining healthy skin. Drinking plenty of water throughout the day helps keep your skin hydrated from the inside out, promoting a plump and radiant appearance. Aim for at least 8 glasses of water daily, and adjust your intake based on activity level and climate conditions. In addition to water, consume foods rich in water content, such as fruits and vegetables, to support hydration. Proper hydration helps improve skin elasticity, reduce the appearance of fine lines, and enhance overall skin texture, contributing to a healthier and more vibrant complexion.</p>
+            <h3>5. Eat a Balanced Diet
+            </h3>
+            <p class="blog--text">A balanced diet rich in vitamins, minerals, and antioxidants supports healthy skin. Incorporate a variety of fruits, vegetables, lean proteins, and whole grains into your meals to provide essential nutrients that promote skin health. Foods high in antioxidants, such as berries and leafy greens, help protect the skin from oxidative stress and damage. Omega-3 fatty acids found in fish and nuts can improve skin hydration and elasticity. Avoid excessive consumption of processed foods, sugar, and unhealthy fats, as they can negatively impact skin health. By maintaining a nutritious diet, you support your skin’s natural radiance and resilience.</p>
+            <h3>6. Avoid Smoking and Excessive Alcohol
+            </h3>
+            <p class="blog--text">Smoking and excessive alcohol consumption can adversely affect skin health. Smoking reduces blood flow to the skin, leading to premature aging, wrinkles, and a dull complexion. Alcohol dehydrates the skin and can exacerbate conditions like redness and inflammation. Avoiding these habits helps maintain healthy skin by promoting better circulation, hydration, and overall skin integrity. If you smoke or drink alcohol, consider seeking support to reduce or quit these habits for improved skin health and a more vibrant appearance. By avoiding smoking and limiting alcohol, you enhance your skin’s natural glow and resilience.</p>
+            <h3>7. Get Enough Sleep
+            </h3>
+            <p class="blog--text">Quality sleep is essential for skin repair and regeneration. Aim for 7-9 hours of restful sleep each night to allow your skin to recover from daily damage and stress. During sleep, the body produces collagen and elastin, which are crucial for maintaining skin elasticity and reducing the appearance of wrinkles. Establish a consistent sleep routine by going to bed and waking up at the same time daily, and create a relaxing pre-sleep environment to improve sleep quality. By prioritizing sufficient sleep, you support your skin’s natural healing processes and promote a healthier, more youthful complexion.</p>
+            <h3>8. Exfoliate Regularly</h3>
+            <p class="blog--text">Exfoliation helps remove dead skin cells, unclog pores, and promote cell turnover, leading to smoother and brighter skin. Use a gentle exfoliant suitable for your skin type once or twice a week to avoid over-exfoliation and irritation. Opt for products with alpha-hydroxy acids (AHAs) or beta-hydroxy acids (BHAs) for chemical exfoliation, or use a mild physical exfoliant with soft granules. Exfoliation helps improve skin texture, unclogs pores, and enhances the effectiveness of other skincare products. By incorporating regular exfoliation into your routine, you achieve a fresher and more radiant complexion.</p>
+            <h3></h3>
+            <p class="blog--text"></p>
+            <h3></h3>
+            <p class="blog--text"></p>
+        </div>
+     
+
+        
+     <div class="faq-container">
+        <h1 class="fq">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">How often should I cleanse my skin?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Cleanse your skin twice daily—once in the morning and once before bed—to remove impurities and maintain a clear complexion.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">What type of moisturizer is best for my skin type?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">The best moisturizer depends on your skin type: choose a hydrating, non-comedogenic formula for oily skin, and a richer, emollient-based product for dry skin.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">How can I protect my skin from sun damage?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Protect your skin from sun damage by applying broad-spectrum sunscreen with at least SPF 30 daily, wearing protective clothing, and avoiding excessive sun exposure.</div>
+        </div>
+        
+        <div class="ask-question">
+            <h2>Have a Question?</h2>
+            <input type="text" id="user-question" placeholder="Type your question here...">
+            <input type="submit" id="submit-question" value="Submit">
+        </div>
+     </div>
+
+    
+     <section class="related-articles">
+        <h2>Related Articles</h2>
+        <div class="carousel">
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <article>
+                        <a href="health1.html">
+                        <img src="https://www.liveabout.com/thmb/Dv8t0-0cH39VtRUf4x9qqYTRdeA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-niche-markets-581d04135f9b581c0b800371.jpg" alt="Article 1 Image">
+                        <h3>How to Manage Anxiety Without Medication
+                        </h3>
+                        <p>Anxiety is a common mental health challenge that many people face in today's fast-paced world.</p>
+                        </a>
+                    </article>
+                    <article>
+                        
+                        <a href="health2.html">
+                        <img src="https://mantracare.org/wp-content/uploads/2022/11/How-To-Improve-Physical-Health-1536x804.jpeg" alt="Article 1 Image">
+            
+                        <h3>How to Improve Your Physical Fitness at Home
+                        </h3>
+                        <p>Improving your physical fitness at home is both convenient and effective</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="health3.html">
+                        <img src="https://d1yy46jni91oiy.cloudfront.net/wp-content/uploads/2023/04/Sleep-768x384.jpg?x57541" alt="Article 2 Image">
+                        
+                        <h3>How to Improve Your Sleep Quality
+                        </h3>
+                        <p>Achieving restful and restorative sleep is crucial for overall health and well-being.</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="health5.html">
+                           <img src="https://www.hccb.in/images/34991210106_d305469765_c.jpg" alt="Article 3 Image">
+                           <h3>How to Improve Your Mental Focus</h3>
+                           <p>Enhancing mental focus is essential for achieving productivity</p>
+                           </a>
+                       </article>
+                  
+                    <!-- Add more articles as needed -->
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+     </section>
+
+       
+    </div>    
+    <div class="ooter">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="share">
+            <h3>Share</h3>
+            <div class="ocial-icons">
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+const menuToggle = document.querySelector('.menu-toggle');
+const featuredToggle = document.querySelector('.toggle-featured');
+const featuredPosts = document.getElementById('featured-posts');
+
+menuToggle.addEventListener('click', function () {
+    toggleMenu();
+});
+
+featuredToggle.addEventListener('click', function () {
+    featuredPosts.classList.toggle('closed');
+});
+
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+});
+
+</script>
+
+<script>
+    document.querySelectorAll('.question-container').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                item.querySelector('.plus-sign').textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                item.querySelector('.plus-sign').textContent = '-';
+            }
+        })
+    });
+
+    document.getElementById('submit-question').addEventListener('click', () => {
+        const userQuestion = document.getElementById('user-question').value;
+        if (userQuestion.trim()) {
+            alert(`Your question: "${userQuestion}" has been submitted!`);
+            document.getElementById('user-question').value = '';
+        } else {
+            alert('Please enter a question.');
+        }
+    });
+</script>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelector('.carousel-slide');
+        const totalSlides = slides.children.length;
+        const slideWidth = slides.children[0].offsetWidth;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+</script>
+</html>
