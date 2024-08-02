@@ -6,18 +6,16 @@
     <title>Modern Blog Layout</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-    background-color: #333;
+         body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: rgb(29, 26, 26);
     color: #fff;
     padding: 20px 0;
 }
@@ -30,6 +28,7 @@ header .container {
 
 header h1 {
     margin: 0;
+    padding-left: 30px;
 }
 
 nav ul {
@@ -53,7 +52,9 @@ nav ul li a:hover {
 
 /* Dropdown Styles */
 .dropbtn {
-    background-color: #007bff;
+    background-color:rgb(29, 26, 26);
+    
+    
     color: white;
     padding: 10px;
     border: none;
@@ -90,111 +91,97 @@ nav ul li a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            flex: 1;
-        }
-        .section-title {
-            margin: 20px 0;
-            font-size: 1.8rem;
-            color: #6200ea;
-            border-bottom: 2px solid #6200ea;
-            display: inline-block;
-        }
-        .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .blog-post {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            width: calc(50% - 20px);
-        }
-        .blog-post img {
-            width: 100%;
-            height: auto;
-        }
-        .blog-post-content {
-            padding: 20px;
-        }
-        .blog-post-title {
-            font-size: 1.5rem;
-            margin: 0 0 10px;
-            color: #333;
-        }
-        .blog-post-description {
-            font-size: 1rem;
-            color: #666;
-        }
-        .blog-post:hover {
-            transform: translateY(-10px);
-        }
-        footer {
-            background-color:  #333;/* Dark blue */
-            padding: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            color: #fff;
-        }
 
-        .about-us,
-        .quick-links,
-        .share {
-            flex: 1;
-            margin-right: 20px;
-        }
+.hammer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
 
-        .about-us h3,
-        .quick-links h3,
-        .share h3 {
-            margin-bottom: 10px;
-        }
+.hamm ul {
+    list-style: none;
+    padding: 0;
+}
 
-        .quick-links ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.hamm ul li {
+    display: inline;
+    margin: 0 10px;
+}
 
-        .quick-links li {
-            margin-bottom: 5px;
-        }
+.hamm ul li a {
+    color: #fff;
+    text-decoration: none;
+}
 
-        .quick-links a {
-            text-decoration: none;
-            color: #ccc;
-        }
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        .social-icons {
-            display: flex;
-            align-items: center;
-        }
+#articles {
+    flex: 1 1 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        .social-icons a {
-            margin-right: 15px;
-            transition: transform 0.3s ease;
-        }
+#articles .article {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex: 1 1 calc(50% - 10px); /* Flex basis of 50% minus gap */
+    box-sizing: border-box;
+    min-height: 200px; /* Ensure a minimum height */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* For absolute positioning inside */
+}
 
-        .social-icons a:hover {
-            transform: scale(1.2);
-        }
+#articles .article img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    transition: width 0.3s ease;
+}
 
-        .social-icons img {
-            width: 30px;
-            height: 30px;
-        }
-        @media (max-width: 768px) {
-            .blog-post {
-                width: 100%;
-            }
-        }
-        .menu-toggle {
+#articles .article h2 {
+    margin: 0 0 10px 0;
+    color: #555;
+}
+
+.latest-post-widget {
+    display: none;
+    flex: 1 1 25%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.latest-post-widget h2 {
+    margin: 0 0 5px 0;
+}
+
+.latest-post-widget p {
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    #articles .article {
+        flex: 1 1 calc(100% - 10px); /* Full width minus gap */
+    }
+
+    #articles .article img {
+        max-width: 250px; /* Increase image size on smaller screens */
+
+    }
+}
+
+.menu-toggle {
     display: none;
     background: none;
     border: none;
@@ -256,79 +243,297 @@ nav ul li a:hover {
         display: block;
     }
 }
+
+footer {
+    background-color: rgb(44, 39, 42);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+.about-us,
+.quick-links,
+.share {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-us h3,
+.quick-links h3,
+.share h3 {
+    margin-bottom: 10px;
+}
+
+.quick-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 5px;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+a {
+    color: inherit; /* Inherit color from parent element */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
+    color: inherit; /* Maintain the color on hover */
+}
+
+a:visited {
+    color: inherit; /* Maintain color consistency for visited links */
+}
+
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>strangesage</h1>
+            <h1>StrangeSage</h1>
             <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                        <a href="post.html" class="dropbtn">Posts &#9662;</a>
+                        <a href="post.html" class="dropbtn">Latest</a>
                         <div class="dropdown-content">
-                            <a href="">Latest Posts</a>
-                            <a href="#">Categories</a>
+                            
                         </div>
                     </li>
-                    <li><a href="aboutus.html">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="">Posts</a></li>
+                    <li><a href="aboutus.html">Contact</a></li>
+                    
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="container">
-        <section>
-            <h2 class="section-title">Blog Posts</h2>
-            <div class="blog-posts">
-                <div class="blog-post">
-                    <a href="20post/1.html"><img src="https://cdn.pixabay.com/photo/2017/05/25/15/08/jogging-2343558_1280.jpg" alt="Image"></a>
-                    <div class="blog-post-content">
-                        <a href="20post/1.html"><h3 class="blog-post-title">5 Quick and Healthy Breakfast Recipes for Busy Mornings</h3></a>
-                        <p class="blog-post-description"> Combine oats, milk (or yogurt), and your favorite toppings in a jar before bed. In the morning, enjoy a nutritious and customizable breakfast without any cooking required.</p>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <a href="20post/2.html"><img src="https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_640.jpg" alt="Blog Post Image"></a>
-                    <div class="blog-post-content">
-                        <h3 class="blog-post-title">How to Start a Daily Journaling Habit: Tips for Beginners</h3>
-                        <p class="blog-post-description">Begin by understanding why you want to start journaling. Whether it's for self-reflection, creativity, or stress relief, having a clear intention will keep you motivated.</p>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <a href="20post/4.html"><img src="https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_640.jpg" alt="Blog Post Image"></a>
-                    <div class="blog-post-content">
-                        <h3 class="blog-post-title">The Benefits of Daily Exercise: Simple Strategies for Getting Active</h3>
-                        <p class="blog-post-description">Daily exercise boosts cardiovascular health, strengthens muscles, and improves overall physical fitness.</p>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <a href="20post/5.html"><img src="https://cdn.pixabay.com/photo/2020/04/04/13/41/corona-5002341_640.jpg" alt="Blog Post Image"></a>
-                    <div class="blog-post-content">
-                        <h3 class="blog-post-title">The Impact of Social Media on Mental Health: Understanding the Risks and Strategies for Well-Being</h3>
-                        <p class="blog-post-description">Begin by introducing the prevalence of social media in modern society and its pervasive influence on daily life. Highlight statistics on the number of users and the average time spent on social media platforms.</p>
-                    </div>
-                </div>
-                <div class="blog-post">
-                   <a href="20post/5.html"> <img src="https://cdn.pixabay.com/photo/2023/12/29/17/37/monstera-8476616_640.jpg" alt="Blog Post Image"></a>
-                    <div class="blog-post-content">
-                        <h3 class="blog-post-title">The Art of Storytelling in Marketing</h3>
-                        <p class="blog-post-description">Begin by explaining why storytelling is such a powerful tool in marketing. Discuss how stories have the ability to captivate attention, evoke emotions, and create memorable experiences for consumers.</p>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <a href="20post/6.html"><img src="https://cdn.pixabay.com/photo/2023/08/30/09/44/woman-8222956_640.jpg" alt="Blog Post Image"></a>
-                    <div class="blog-post-content">
-                        <h3 class="blog-post-title">The Benefits of Journaling for Personal Growth</h3>
-                        <p class="blog-post-description">Journaling can help reduce stress by providing an outlet for expressing emotions, thoughts, and worries. Writing about stressful experiences can help individuals gain perspective and find solutions to problems.</p>
-                    </div>
+    
+        <div class="hammer">
+        <div class="hamm">
+            <ul>
+                <li><a href="#" data-category="all">All</a></li>
+                <li><a href="#" data-category="technology">Technology</a></li>
+                <li><a href="#" data-category="health">Health</a></li>
+                <li><a href="#" data-category="travel">Finance</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    
+        <section id="articles">
+            <a href="tech1.html">
+            <article class="article" data-category="technology">
+                
+                    <img src="https://images.pexels.com/photos/11035472/pexels-photo-11035472.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Technology">
+                   <div>
+                    <h2> Choose a Start Programming Language.</h2>
+                   
+                    <p>Coding, the process of creating instructions </p>
+                    
+                   </div>
+                
+            </article>
+            </a>
+            <a href="health1.html">
+            <article class="article" data-category="health">
+                <img src="https://pillarsofwellness.ca/wp-content/uploads/2021/03/mental-health-960x675.jpg" alt="Health">
+                <div>
+                    <h2>How to Manage Anxiety Without Medication
+                    </h2>
+                    <p>Anxiety is a common mental health challenge that many people </p>
+                    
                 </div>
                 
-            </div>
+            </article>
+            </a>
+            <a href="finance1.html">
+            <article class="article" data-category="travel">
+                <img src="https://www.livemint.com/lm-img/img/2024/06/03/600x338/Nifty_1667546435835_1717410694965.jpg" alt="Travel">
+                <div>
+                    <h2>Stock Market Investing for Beginners</h2>
+                    <p>Stock market investing can seem daunting for beginner</p>
+                </div>
+            </article>
+            </a>
+            <a href="tech2.html">
+                <article class="article" data-category="technology">
+                    
+                        <img src="https://cdnbbsr.s3waas.gov.in/s3c92a10324374fac681719d63979d00fe/uploads/2023/05/2023102630.png" alt="Technology">
+                       <div>
+                        <h2>How to Create a Successful YouTube</h2>
+                       
+                        <p>Creating a successful YouTube channel on tech reviews</p>
+                        
+                       </div>
+                    
+                </article>
+                </a>
+                <a href="health2.html">
+                <article class="article" data-category="health">
+                    <img src="https://mantracare.org/wp-content/uploads/2022/11/How-To-Improve-Physical-Health-1536x804.jpeg" alt="Health">
+                    <div>
+                        <h2>How to Improve Your Physical Fitness at Home
+                        </h2>
+                        <p>Improving your physical fitness at home is both convenient</p>
+                        
+                    </div>
+                    
+                </article>
+                </a>
+                <a href="finance2.html">
+                <article class="article" data-category="travel">
+                    <img src="https://www.author.thinkwithniche.com/allimages/project/thumb_313d4choose-the-right-stocks-for-portfolio.jpg
+                    " alt="Travel">
+                    <div>
+                        <h2>How to Choose the Right Stocks for Your Portfolio</h2>
+                        <p>Choosing the right stocks for your portfolio is crucial to achieving </p>
+                    </div>
+                </article>
+                </a>
+                <a href="tech3.html">
+                    <article class="article" data-category="technology">
+                        
+                            <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2021/12/et-seo-audit-blog-post-1.jpg" alt="Technology">
+                           <div>
+                            <h2>How to Optimize Your Website for SEO in 2024</h2>
+                           
+                            <p>Optimizing your website for SEO in 2024 requires staying ahead of evolving </p>
+                            
+                           </div>
+                        
+                    </article>
+                    </a>
+                    <a href="health3.html">
+                    <article class="article" data-category="health">
+                        <img src="https://d1yy46jni91oiy.cloudfront.net/wp-content/uploads/2023/04/Sleep-768x384.jpg?x57541" alt="Health">
+                        <div>
+                            <h2>How to Improve Your Sleep Quality
+                            </h2>
+                            <p>Achieving restful and restorative sleep is crucial for overall health</p>
+                            
+                        </div>
+                        
+                    </article>
+                    </a>
+                    <a href="finance3.html">
+                    <article class="article" data-category="travel">
+                        <img src="https://www.canarahsbclife.com/content/dam/choice/tax-university/images/6-ways-to-save-income-tax-in-india.jpg" alt="Travel">
+                        <div>
+                            <h2>Top 10 Tax-saving Strategies to Reduce Your Tax Bill</h2>
+                            <p>Reducing your tax bill legally and effectively requires strategic planning</p>
+                        </div>
+                    </article>
+                    </a>
+                    <a href="tech4.html">
+                        <article class="article" data-category="technology">
+                            
+                                <img src="https://ioflood.com/blog/wp-content/uploads/2023/09/Collage-of-Python-programming-aspects-syntax-libraries-Python-symbols-logo-300x300.jpg.webp" alt="Technology">
+                               <div>
+                                <h2>op 10 Programming Languages to Learn</h2>
+                               
+                                <p>As technology continues to evolve at a rapid pace</p>
+                                
+                               </div>
+                            
+                        </article>
+                        </a>
+                        <a href="health4.html">
+                        <article class="article" data-category="health">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/044/575/690/small/woman-applying-sunscreen-on-her-cheek-in-focus-skin-care-concept-image-photo.jpg" alt="Health">
+                            <div>
+                                <h2>How to Maintain Healthy Skin</h2>
+                                <p>Maintaining healthy skin is essential for overall well-being and confidence. </p>
+                                
+                            </div>
+                            
+                        </article>
+                        </a>
+                        <a href="finance4.html">
+                        <article class="article" data-category="travel">
+                            <img src="https://www.convergentnonprofit.com/wp-content/uploads/2014/02/Canva-Businessman-writes-investor-on-blackboard-concept-700x416.jpg" alt="Travel">
+                            <div>
+                                <h2>Top 10 Common Mistakes New Investors</h2>
+                                <p>Starting your investment journey can be exciting, but new investors </p>
+                            </div>
+                        </article>
+                        </a>
+                        <a href="tech5.html">
+                            <article class="article" data-category="technology">
+                                
+                                    <img src="https://images.pexels.com/photos/163097/twitter-social-media-communication-internet-network-163097.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Technology">
+                                   <div>
+                                    <h2>How to Build Your First Website: A Beginner's Guide</h2>
+                                   
+                                    <p>Your first website can seem like a daunting task</p>
+                                    
+                                   </div>
+                                
+                            </article>
+                            </a>
+                            <a href="health5.html">
+                            <article class="article" data-category="health">
+                                <img src="https://www.hccb.in/images/34991210106_d305469765_c.jpg" alt="Health">
+                                <div>
+                                    <h2>How to Improve Your Mental Focus</h2>
+                                        <p>Enhancing mental focus is essential for achieving productivity</p>
+                                    
+                                    
+                                </div>
+                                
+                            </article>
+                            </a>
+                            <a href="finance5.html">
+                            <article class="article" data-category="travel">
+                                <img src="https://cdn-jklip.nitrocdn.com/safSuIdqgDlBkQZOuiEFYetySutVuoYj/assets/images/optimized/rev-0a238ef/happay.com/blog/wp-content/uploads/sites/12/2023/11/corporate-finance-768x448.webp" alt="Travel">
+                                <div>
+                                    <h2>How to Build a Diversified Investment Portfolio
+                                    </h2>
+                                    <p>Start by defining your financial goals and investment horizon.</p>
+                                </div>
+                            </article>
+                            </a>
+            <!-- Add more articles as needed -->
         </section>
-    </div>
+
+    <aside class="latest-post-widget">
+        <h2>Latest Post</h2>
+        <p>Latest post content goes here...</p>
+    </aside>
+        
+    </main>
+    
+    
     <footer>
         <div class="about-us">
             <h3>About Us</h3>
@@ -354,7 +559,37 @@ nav ul li a:hover {
             </div>
         </div>
     </footer>
-</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.hamm ul li a');
+            const articles = document.querySelectorAll('#articles .article');
+            const latestPostWidget = document.querySelector('.latest-post-widget');
+            const latestPost = articles[0]; // Assuming the first article is the latest post
+
+            latestPostWidget.querySelector('h2').innerText = latestPost.querySelector('h2').innerText;
+            
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    const category = event.target.getAttribute('data-category');
+                    filterArticles(category);
+                });
+            });
+
+            function filterArticles(category) {
+                articles.forEach(article => {
+                    if (category === 'all' || article.getAttribute('data-category') === category) {
+                        article.style.display = 'flex';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 const menuToggle = document.querySelector('.menu-toggle');
@@ -374,6 +609,6 @@ function toggleMenu() {
     nav.classList.toggle('active');
 }
 });
-
 </script>
+</body>
 </html>
