@@ -1,0 +1,674 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+header {
+    background-color:rgb(29, 26, 26);
+    
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    */
+
+/* Dropdown Styles */
+.dropbtn {
+    background-color:#00000033;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+        .contain {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .hammer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+        }
+
+        .blog--text {
+            line-height: 1.7;
+            margin: 20px 0;
+            font-size: larger;
+            color: black;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        h3{
+            font-size:1.5em;
+             margin:20px 0;
+           display: flex;
+            align-items: center;
+        }
+
+        .subheading-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        padding: 20px;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+        
+
+
+    }
+
+    .sidebar {
+        
+        margin-top: 20px;
+        padding-left: 0;
+        
+    }
+
+
+    /*realed article*/
+
+    .related-articles {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px; /* Adjusted for larger screens */
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide article {
+            flex: 1 0 33%; /* Default to 3 articles per row */
+            box-sizing: border-box;
+            padding: 10px;
+            max-width: 33%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide article {
+                flex: 1 0 100%; /* 1 article per row */
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    <style>
+    
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+    .ooter {
+            background-color:rgb(44, 39, 42);
+                   
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            
+        }
+
+        .about-us,
+        .quick-links,
+        .share {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-us h3,
+        .quick-links h3,
+        .share h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 5px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .ocial-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .ocial-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .ocial-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .ocial-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /*fq */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #b37b7b44;
+            color: #444035;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question {
+            margin: 0;
+        }
+
+        .plus-sign {
+            font-size: 1.5em;
+        }
+
+        .answer {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ask-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ask-question input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ask-question input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: rgb(108, 209, 108);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: white;">    StrangeSage</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="post.html" class="dropbtn">Latest</a>
+                        <div class="dropdown-content">
+                            
+                        </div>
+                        <li><a href="aboutus.html">Posts</a></li>
+                    <li><a href="contact.html"></a>Contact</li>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="contain">
+        <div class="hammer">
+            <h1>How to Improve Your Sleep Quality
+            </h1>
+            <img src="https://d1yy46jni91oiy.cloudfront.net/wp-content/uploads/2023/04/Sleep-768x384.jpg?x57541" class="ghost-image" alt="">
+            <p class="blog--text"><b>Introduction:</b>Achieving restful and restorative sleep is crucial for overall health and well-being. Poor sleep quality can impact your mood, cognitive function, and physical health. Improving sleep quality involves adopting effective strategies to create an environment conducive to rest and developing healthy sleep habits. From establishing a consistent sleep schedule and optimizing your sleep environment to incorporating relaxation techniques and managing stress, there are numerous approaches to enhance your sleep. This guide explores practical tips and proven methods to help you achieve better sleep, ensuring you wake up refreshed and ready to face each day with energy and vitality.
+            </p>
+            <h3>1. Establish a Consistent Sleep Schedule
+            </h3>
+            <p class="blog--text">Maintaining a consistent sleep schedule is essential for regulating your body’s internal clock. Go to bed and wake up at the same time every day, even on weekends. This consistency helps reinforce your body’s natural sleep-wake cycle, making it easier to fall asleep and wake up refreshed. Create a relaxing bedtime routine, such as reading or taking a warm bath, to signal to your body that it’s time to wind down. Avoid drastic changes in your sleep schedule and aim for 7-9 hours of sleep per night to ensure you get the restorative rest your body needs.</p>
+            <h3>2. Optimize Your Sleep Environment
+            </h3>
+            <p class="blog--text">Your sleep environment plays a crucial role in the quality of your rest. Make your bedroom a comfortable and relaxing space by keeping it cool, dark, and quiet. Invest in a comfortable mattress and pillows that support a good sleeping posture. Remove electronic devices such as TVs, computers, and smartphones from the bedroom, as their screens can interfere with your body’s production of melatonin, the sleep hormone. Consider using blackout curtains, white noise machines, or earplugs if needed to create an ideal sleep environment that promotes restful and uninterrupted sleep.</p>
+            <h3>3. Limit Exposure to Screens Before Bed
+            </h3>
+            <p class="blog--text">Exposure to screens before bedtime can disrupt your sleep by suppressing melatonin production and stimulating your brain. Aim to avoid screens such as smartphones, tablets, and computers at least an hour before going to bed. Instead, engage in calming activities that do not involve screens, such as reading a book, practicing relaxation exercises, or meditating. The blue light emitted by screens can interfere with your natural sleep cycle, so creating a screen-free pre-sleep routine helps signal to your body that it’s time to wind down and prepare for restful sleep.</p>
+            <h3>4. Avoid Caffeine and Heavy Meals Before Bed</h3>
+            <p class="blog--text">Consuming caffeine or heavy meals close to bedtime can negatively impact your sleep quality. Caffeine is a stimulant that can keep you awake, so try to limit its intake, especially in the afternoon and evening. Similarly, large or spicy meals can cause discomfort and indigestion, making it harder to fall asleep. Aim to have your last meal at least two to three hours before bed and opt for light, easily digestible snacks if you need something before sleeping. By managing your intake of caffeine and heavy foods, you support a more restful and uninterrupted night’s sleep.</p>
+            <h3>5. Incorporate Relaxation Techniques
+            </h3>
+            <p class="blog--text">Relaxation techniques can help calm your mind and prepare your body for sleep. Practices such as deep breathing exercises, progressive muscle relaxation, or guided imagery can reduce stress and promote a sense of calm. Consider incorporating these techniques into your bedtime routine to help signal to your body that it’s time to relax and wind down. Meditation, gentle stretching, or listening to soothing music can also be effective in easing your transition to sleep. By regularly practicing relaxation techniques, you can improve your ability to fall asleep and enhance the overall quality of your rest.</p>
+            <h3>6. Exercise Regularly, But Not Too Late
+            </h3>
+            <p class="blog--text"> Regular physical activity is beneficial for improving sleep quality, as it helps regulate your body’s sleep-wake cycle and reduces stress. Aim for at least 30 minutes of moderate exercise most days of the week. However, try to complete your workout at least a few hours before bedtime, as exercising too close to bedtime can increase alertness and make it harder to fall asleep. Find activities that you enjoy and that fit into your daily routine. By balancing regular exercise with proper timing, you can enhance your overall sleep quality and support better rest.           </p>
+            <h3>7. Manage Stress and Anxiety
+            </h3>
+            <p class="blog--text">Managing stress and anxiety is crucial for improving sleep quality. High levels of stress can lead to difficulty falling asleep and frequent awakenings during the night. Incorporate stress-reducing practices into your daily routine, such as mindfulness, meditation, or journaling. Identify and address sources of stress in your life, and find healthy coping mechanisms to manage them effectively. By reducing stress and addressing anxiety, you can create a more peaceful mental state conducive to better sleep. Implementing relaxation strategies and seeking support when needed can contribute to more restful and restorative sleep.</p>
+            <h3>8. Limit Naps During the Day
+            </h3>
+            <p class="blog--text">While short naps can be refreshing, long or irregular napping during the day can negatively affect your nighttime sleep quality. If you need to nap, aim for no more than 20-30 minutes and try to do so earlier in the day to avoid interfering with your regular sleep schedule. Ensure that naps are not too close to your bedtime, as this can make it harder to fall asleep at night. By managing the timing and duration of your naps, you support a more consistent and restful nighttime sleep, helping you maintain a balanced sleep-wake cycle.</p>
+            
+        </div>
+     
+
+        
+     <div class="faq-container">
+        <h1 class="fq">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">What is your return policy?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Our return policy lasts 30 days...</div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">How do I track my order?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">You can track your order through...</div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">Do you ship internationally?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Yes, we ship to over 50 countries...</div>
+        </div>
+        
+        <div class="ask-question">
+            <h2>Have a Question?</h2>
+            <input type="text" id="user-question" placeholder="Type your question here...">
+            <input type="submit" id="submit-question" value="Submit">
+        </div>
+     </div>
+
+    
+     <section class="related-articles">
+        <h2>Related Articles</h2>
+        <div class="carousel">
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <article>
+                        <a href="health1.html">
+                        <img src="https://www.liveabout.com/thmb/Dv8t0-0cH39VtRUf4x9qqYTRdeA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-niche-markets-581d04135f9b581c0b800371.jpg" alt="Article 1 Image">
+                        <h3>How to Manage Anxiety Without Medication
+                        </h3>
+                        <p>Anxiety is a common mental health challenge that many people face in today's fast-paced world.</p>
+                        </a>
+                    </article>
+                    <article>
+                        
+                        <a href="health2.html">
+                        <img src="https://mantracare.org/wp-content/uploads/2022/11/How-To-Improve-Physical-Health-1536x804.jpeg" alt="Article 1 Image">
+            
+                        <h3>How to Improve Your Physical Fitness at Home
+                        </h3>
+                        <p>Improving your physical fitness at home is both convenient and effective</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="health4.html">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/044/575/690/small/woman-applying-sunscreen-on-her-cheek-in-focus-skin-care-concept-image-photo.jpg" alt="Article 3 Image">
+                        <h3>How to Maintain Healthy Skin
+                        </h3>
+                        <p>Maintaining healthy skin is essential for overall well-being and confidence.</p>
+                        </a>
+                    </article>
+                    <article>
+                     <a href="health5.html">
+                        <img src="https://www.hccb.in/images/34991210106_d305469765_c.jpg" alt="Article 3 Image">
+                        <h3>How to Improve Your Mental Focus</h3>
+                        <p>Enhancing mental focus is essential for achieving productivity</p>
+                        </a>
+                    </article>
+                    
+                    <!-- Add more articles as needed -->
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+     </section>
+
+       
+    </div>    
+    <div class="ooter">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="share">
+            <h3>Share</h3>
+            <div class="ocial-icons">
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+const menuToggle = document.querySelector('.menu-toggle');
+const featuredToggle = document.querySelector('.toggle-featured');
+const featuredPosts = document.getElementById('featured-posts');
+
+menuToggle.addEventListener('click', function () {
+    toggleMenu();
+});
+
+featuredToggle.addEventListener('click', function () {
+    featuredPosts.classList.toggle('closed');
+});
+
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+});
+
+</script>
+
+<script>
+    document.querySelectorAll('.question-container').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                item.querySelector('.plus-sign').textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                item.querySelector('.plus-sign').textContent = '-';
+            }
+        })
+    });
+
+    document.getElementById('submit-question').addEventListener('click', () => {
+        const userQuestion = document.getElementById('user-question').value;
+        if (userQuestion.trim()) {
+            alert(`Your question: "${userQuestion}" has been submitted!`);
+            document.getElementById('user-question').value = '';
+        } else {
+            alert('Please enter a question.');
+        }
+    });
+</script>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelector('.carousel-slide');
+        const totalSlides = slides.children.length;
+        const slideWidth = slides.children[0].offsetWidth;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+</script>
+</html>

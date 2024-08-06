@@ -1,0 +1,685 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+header {
+    background-color:rgb(29, 26, 26);
+    
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    */
+
+/* Dropdown Styles */
+.dropbtn {
+    background-color:#00000033;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+        .contain {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .hammer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+        }
+
+        .blog-text {
+            line-height: 1.7;
+            margin: 20px 0;
+            color: black;
+            font-size: larger;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        h3{
+            font-size:1.5em;
+             margin:20px 0;
+           display: flex;
+            align-items: center;
+        }
+
+        .subheading-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        padding: 20px;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+        
+
+
+    }
+
+    .sidebar {
+        
+        margin-top: 20px;
+        padding-left: 0;
+        
+    }
+
+
+    /*realed article*/
+
+    .related-articles {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px; /* Adjusted for larger screens */
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide article {
+            flex: 1 0 33%; /* Default to 3 articles per row */
+            box-sizing: border-box;
+            padding: 10px;
+            max-width: 33%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide article {
+                flex: 1 0 100%; /* 1 article per row */
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    <style>
+    
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+    .ooter {
+            background-color:rgb(44, 39, 42);
+                     
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            
+        }
+
+        .about-us,
+        .quick-links,
+        .share {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-us h3,
+        .quick-links h3,
+        .share h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 5px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .ocial-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .ocial-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .ocial-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .ocial-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /*fq */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #b37b7b44;
+            color: #444035;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question {
+            margin: 0;
+        }
+
+        .plus-sign {
+            font-size: 1.5em;
+        }
+
+        .answer {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ask-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ask-question input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ask-question input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: rgb(108, 209, 108);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: white;">    StrangeSage</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="post.html" class="dropbtn">Latest</a>
+                        <div class="dropdown-content">
+                            
+                        </div>
+                        <li><a href="aboutus.html">Posts</a></li>
+                    <li><a href="contact.html"></a>Contact</li>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="contain">
+        <div class="hammer">
+            
+             
+            <h1>How to Choose the Right Stocks for Your Portfolio
+            </h1>
+            <img src="https://www.author.thinkwithniche.com/allimages/project/thumb_313d4choose-the-right-stocks-for-portfolio.jpg"  class="ghost-image" alt="">
+             <p class="blog-text">Choosing the right stocks for your portfolio is crucial to achieving your financial goals and managing risk. With thousands of options available, it can be overwhelming to determine which stocks align with your investment strategy. This guide will help you understand key factors to consider, such as financial health, industry position, growth potential, and valuation metrics. By carefully evaluating these aspects, you can make informed decisions that enhance your portfolio's performance and stability, setting you on the path to successful investing.
+            </p>
+             <h3>1. Assess Your Financial Goals
+            </h3>
+             <p class="blog-text">Start by defining your financial goals and investment horizon. Are you investing for short-term gains, long-term growth, or retirement? Your objectives will influence your risk tolerance and the types of stocks suitable for your portfolio. For example, long-term investors may focus on growth stocks with higher potential returns, while those seeking steady income might prefer dividend-paying stocks. Understanding your goals helps create a focused investment strategy that aligns with your personal and financial aspirations, ensuring you choose stocks that support your overall financial plan.
+            </p>
+             <h3>2. Understand Different Stock Types
+            </h3>
+             <p class="blog-text">Stocks can be categorized into different types, such as growth, value, and income stocks. Growth stocks belong to companies expected to grow at an above-average rate compared to other companies. Value stocks are typically undervalued by the market but have the potential for appreciation. Income stocks provide regular dividends and are usually from well-established companies. Understanding these categories helps you diversify your portfolio and balance risk and reward according to your investment strategy and financial goals.
+            </p>
+             <h3>3. Analyze Financial Statements
+            </h3>
+             <p class="blog-text">Thoroughly analyzing a company's financial statements is crucial for informed stock selection. Key documents include the balance sheet, income statement, and cash flow statement. These statements provide insights into a company's financial health, including its assets, liabilities, revenue, expenses, and cash flow. Look for consistent revenue growth, manageable debt levels, and strong profit margins. Evaluating these factors helps you assess the company's stability and growth potential, ensuring you invest in financially sound companies that align with your risk tolerance and investment objectives.
+            </p>
+             <h3>4. Evaluate Valuation Metrics
+            </h3>
+             <p class="blog-text">Valuation metrics help determine if a stock is fairly priced. Common metrics include the price-to-earnings (P/E) ratio, price-to-book (P/B) ratio, and price-to-sales (P/S) ratio. The P/E ratio compares a company's stock price to its earnings per share, indicating how much investors are willing to pay for a dollar of earnings. The P/B ratio compares the stock's market value to its book value, while the P/S ratio compares the stock price to the company's revenues. These metrics provide insights into whether a stock is overvalued, undervalued, or fairly valued, guiding your investment decisions.
+            </p>
+             <h3>5. Consider Industry Position and Competitors
+            </h3>
+             <p class="blog-text">Understanding a company's position within its industry is essential for evaluating its long-term potential. Assess the company's market share, competitive advantages, and the strength of its products or services. Analyze its main competitors to gauge its relative performance and market position. A company with a strong industry position and competitive edge is more likely to sustain growth and profitability. This analysis helps you identify companies that can thrive in competitive environments and contribute positively to your portfolio.
+            </p>
+             <h3>6. Examine Management and Corporate Governance
+            </h3>
+             <p class="blog-text">The quality of a company's management team and its corporate governance practices can significantly impact its success. Look for experienced and reputable leadership with a track record of making sound strategic decisions. Evaluate the company's governance policies, including transparency, accountability, and shareholder rights. Good governance practices reduce risks associated with mismanagement and unethical behavior. Investing in companies with strong leadership and robust governance structures enhances the likelihood of stable and sustainable returns, protecting your investment over the long term.
+            </p>
+             <h3>7. Monitor Market and Economic Trends
+            </h3>
+             <p class="blog-text">Stay informed about market and economic trends that can impact your investments. Economic indicators like interest rates, inflation, and employment data influence stock market performance. Additionally, sector-specific trends and technological advancements can affect certain industries. Regularly reviewing these trends helps you anticipate market movements and adjust your portfolio accordingly. Being proactive and responsive to changing conditions enables you to make informed decisions, optimize your investment strategy, and protect your portfolio from potential downturns.
+            </p>
+             <h3>8. Diversify Your Portfolio
+            </h3>
+             <p class="blog-text">Diversification is a risk management strategy that involves spreading your investments across different sectors, industries, and geographic regions. By not concentrating your investments in one area, you reduce the impact of a poor-performing stock on your overall portfolio. Aim to include a mix of stock types, such as growth, value, and income stocks, to balance risk and reward. Diversification enhances your portfolio's stability and potential for returns, helping you achieve your financial goals while mitigating risks associated with market volatility.
+            </p>
+             
+
+        
+    <div class="faq-container">
+        <h1 class="fq">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">1. What are growth stocks?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Growth stocks belong to companies expected to grow at an above-average rate compared to other companies.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">2. What are value stocks?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Value stocks are typically undervalued by the market but have the potential for appreciation.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">3. What are income stocks?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Income stocks provide regular dividends and are usually from well-established companies.
+            </div>
+        </div>
+        
+        <div class="ask-question">
+            <h2>Have a Question?</h2>
+            <input type="text" id="user-question" placeholder="Type your question here...">
+            <input type="submit" id="submit-question" value="Submit">
+        </div>
+    </div>
+
+    
+    <section class="related-articles">
+        <h2>Related Articles</h2>
+        <div class="carousel">
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <article>
+                        <a href="finance3.html">
+                        <img src="https://www.liveabout.com/thmb/Dv8t0-0cH39VtRUf4x9qqYTRdeA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-niche-markets-581d04135f9b581c0b800371.jpg" alt="Article 1 Image">
+                        <h3>Top 10 Tax-saving Strategies to Reduce Your Tax Bill</h3>
+                        <p>Reducing your tax bill legally and effectively requires strategic planning .</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance4.html">
+                        <img src="ultra-detailed-nebula-abstract-wallpaper-4_1562-749.avif" alt="Article 3 Image">
+                        <h3>Top 10 Common Mistakes New Investors Make and How to Avoid Them</h3>
+                        <p>Starting your investment journey can be exciting, </p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance5.html">
+                        <img src="ultra-detailed-nebula-abstract-wallpaper-4_1562-749.avif" alt="Article 3 Image">
+                        <h3>How to Build a Diversified Investment Portfolio
+                        </h3>
+                        <p>Start by defining your financial goals and investment horizon.</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance1.html">
+                        <img src="footer-background.jpg" alt="Article 1 Image">
+                        <h3>Stock Market Investing for Beginners: A Complete Guide</h3>
+                        <p>Stock market investing can seem daunting for beginners,</p>
+                        </a>
+                    </article>
+                    
+                    <!-- Add more articles as needed -->
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+       
+    </div>    
+    <div class="ooter">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="share">
+            <h3>Share</h3>
+            <div class="ocial-icons">
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+const menuToggle = document.querySelector('.menu-toggle');
+const featuredToggle = document.querySelector('.toggle-featured');
+const featuredPosts = document.getElementById('featured-posts');
+
+menuToggle.addEventListener('click', function () {
+    toggleMenu();
+});
+
+featuredToggle.addEventListener('click', function () {
+    featuredPosts.classList.toggle('closed');
+});
+
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+});
+
+</script>
+
+<script>
+    document.querySelectorAll('.question-container').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                item.querySelector('.plus-sign').textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                item.querySelector('.plus-sign').textContent = '-';
+            }
+        })
+    });
+
+    document.getElementById('submit-question').addEventListener('click', () => {
+        const userQuestion = document.getElementById('user-question').value;
+        if (userQuestion.trim()) {
+            alert(`Your question: "${userQuestion}" has been submitted!`);
+            document.getElementById('user-question').value = '';
+        } else {
+            alert('Please enter a question.');
+        }
+    });
+</script>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelector('.carousel-slide');
+        const totalSlides = slides.children.length;
+        const slideWidth = slides.children[0].offsetWidth;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+</script>
+</html>

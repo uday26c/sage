@@ -1,0 +1,695 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Base styles (mobile first) */
+body {
+    font-size: 16px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 992px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+        
+        
+header {
+    background-color:rgb(29, 26, 26);
+    
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    */
+
+/* Dropdown Styles */
+.dropbtn {
+    background-color:#00000033;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+        .contain {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .hammer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+        }
+
+        .blog-text {
+            line-height: 1.7;
+            margin: 20px 0;
+            color: black;
+            font-size: larger;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        h3{
+            font-size:1.5em;
+             margin:20px 0;
+           display: flex;
+            align-items: center;
+        }
+
+        .subheading-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        padding: 20px;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+        
+
+
+    }
+
+    .sidebar {
+        
+        margin-top: 20px;
+        padding-left: 0;
+        
+    }
+
+
+    /*realed article*/
+
+    .related-articles {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px; /* Adjusted for larger screens */
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide article {
+            flex: 1 0 33%; /* Default to 3 articles per row */
+            box-sizing: border-box;
+            padding: 10px;
+            max-width: 33%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide article {
+                flex: 1 0 100%; /* 1 article per row */
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    <style>
+    
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+    .ooter {
+        background-color:rgb(44, 39, 42);
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            
+        }
+
+        .about-us,
+        .quick-links,
+        .share {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-us h3,
+        .quick-links h3,
+        .share h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 5px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .ocial-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .ocial-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .ocial-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .ocial-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /*fq */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #b37b7b44;
+            color: #444035;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question {
+            margin: 0;
+        }
+
+        .plus-sign {
+            font-size: 1.5em;
+        }
+
+        .answer {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ask-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ask-question input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ask-question input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: rgb(108, 209, 108);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: white;">    StrangeSage</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="post.html" class="dropbtn">Latest</a>
+                        <div class="dropdown-content">
+                            
+                        </div>
+                        <li><a href="aboutus.html">Posts</a></li>
+                    <li><a href="contact.html"></a>Contact</li>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="contain">
+        <div class="hammer">
+            
+             
+            <h1>Stock Market Investing for Beginners: A Complete Guide</h1>
+            <img src="https://www.livemint.com/lm-img/img/2024/06/03/600x338/Nifty_1667546435835_1717410694965.jpg"  class="ghost-image" alt="">
+             <p class="blog-text">Stock market investing can seem daunting for beginners, but with the right knowledge and strategies, it becomes an accessible and rewarding endeavor. This guide aims to demystify the stock market by explaining its fundamental concepts, how to start investing, and key strategies to build a successful portfolio. Whether you’re looking to grow your wealth or secure your financial future, understanding the basics of stock market investing is the first step towards making informed and confident investment decisions.
+            </p>
+             <h3>1. Understanding the Basics</h3>
+             <p class="blog-text">Before diving into stock market investing, it's crucial to understand the fundamental concepts. Stocks represent ownership in a company, and owning shares means you're entitled to a portion of the company's profits and assets. The stock market itself is a platform where these shares are bought and sold, and it operates through exchanges like the New York Stock Exchange (NYSE) or NASDAQ. Prices fluctuate based on supply and demand, company performance, and broader economic factors. Familiarize yourself with terms like dividends, capital gains, and market capitalization, as these are essential to making informed investment decisions.
+            </p>
+             <h3>2. Setting Financial Goals</h3>
+             <p class="blog-text">Having clear financial goals is vital when investing in the stock market. Are you looking to grow your wealth over the long term, save for retirement, or achieve a specific financial milestone? Your goals will influence your investment strategy, risk tolerance, and time horizon. For example, long-term goals may allow for more aggressive investments, while short-term goals might require more conservative choices. Defining your financial objectives helps in creating a focused investment plan that aligns with your personal and financial aspirations.</p>
+             <h3>3. Creating a Budget
+            </h3>
+             <p class="blog-text">Determine how much money you can afford to invest without jeopardizing your financial stability. It's essential to ensure that you're not investing money that you might need in the short term. Create a budget that accounts for your monthly expenses, emergency fund, and savings goals. Once you have a clear picture of your financial situation, allocate a portion of your income to investing. This disciplined approach not only safeguards your finances but also enables consistent investment contributions, which is key to building wealth over time.
+            </p>
+             <h3>4. Choosing the Right Investment Account
+            </h3>
+             <p class="blog-text">Selecting the appropriate investment account is a critical step in your stock market journey. Common options include individual brokerage accounts, retirement accounts like IRAs and 401(k)s, and education savings accounts such as 529 plans. Each type of account has its own benefits, tax implications, and contribution limits. For instance, retirement accounts offer tax advantages but may have restrictions on withdrawals. Evaluate your financial goals and tax situation to choose the account that best fits your needs, ensuring it aligns with your overall investment strategy.
+            </p>
+             <h3>5. Researching and Selecting Stocks
+            </h3>
+             <p class="blog-text">Conduct thorough research before investing in any stock. This involves analyzing the company’s financial health, understanding its business model, and evaluating its growth potential. Look at metrics such as earnings per share (EPS), price-to-earnings (P/E) ratio, and revenue growth. Additionally, consider qualitative factors like industry position, competitive advantages, and management effectiveness. Diversification is key; avoid putting all your money into a single stock. Instead, build a diversified portfolio that spreads risk across various sectors and industries.
+            </p>
+             <h3>6. Building a Diversified Portfolio
+            </h3>
+             <p class="blog-text">different Diversification is a strategy that helps manage risk by spreading investments across  asset classes, industries, and geographic regions. A well-diversified portfolio might include stocks, bonds, mutual funds, ETFs, and other investment vehicles. This approach reduces the impact of a poor-performing investment on your overall portfolio. By not putting all your eggs in one basket, you increase the likelihood of achieving stable returns. Regularly review and rebalance your portfolio to maintain your desired level of diversification and align with your financial goals.
+            </p>
+             <h3>7. Monitoring and Adjusting Your Investments
+            </h3>
+             <p class="blog-text">Investing is not a set-it-and-forget-it endeavor. Regularly monitoring your investments ensures they remain aligned with your financial goals and market conditions. Keep an eye on the performance of your stocks, market trends, and economic indicators. Periodically review your portfolio and make necessary adjustments, such as rebalancing asset allocations or selling underperforming stocks. Stay informed through financial news, reports, and expert analysis. This proactive approach allows you to respond to changes in the market and optimize your investment strategy for better returns</p>
+             
+        
+
+        
+       <div class="faq-container">
+        <h1 class="fq">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">What is the stock market?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">The stock market is a platform where shares of publicly traded companies are bought and sold.
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="question-container">
+                <div class="question">How do I start investing in the stock market?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">To start investing, open an investment account with a brokerage firm and begin purchasing stocks.
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="question-container">
+                <div class="question">What are the risks of investing in the stock market?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">The risks include market volatility, economic downturns, and company-specific issues that can lead to losses</div>
+        </div>
+        
+        <div class="ask-question">
+            <h2>Have a Question?</h2>
+            <input type="text" id="user-question" placeholder="Type your question here...">
+            <input type="submit" id="submit-question" value="Submit">
+        </div>
+        </div>
+
+    
+         <section class="related-articles">
+          <h2>Related Articles</h2>
+         <div class="carousel">
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <article>
+                        <a href="finance3.html">
+                        <img src="https://www.liveabout.com/thmb/Dv8t0-0cH39VtRUf4x9qqYTRdeA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-niche-markets-581d04135f9b581c0b800371.jpg" alt="Article 1 Image">
+                        <h3>Top 10 Tax-saving Strategies to Reduce Your Tax Bill</h3>
+                        <p>Reducing your tax bill legally and effectively requires strategic planning .</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance2.html">
+                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202403/youtube-music-030422307-16x9_2.jpg?VersionId=5UDdS80A8db7Rf3fgi7X10TCZ876ALo6&size=690:388" alt="Article 2 Image">
+                        
+                        <h3>How to Choose the Right Stocks for Your Portfolio</h3>
+                        <p>Choosing the right stocks for your portfolio is crucial to achieving your financial goals</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance4.html">
+                        <img src="ultra-detailed-nebula-abstract-wallpaper-4_1562-749.avif" alt="Article 3 Image">
+                        <h3>Top 10 Common Mistakes New Investors Make and How to Avoid Them</h3>
+                        <p>Starting your investment journey can be exciting, </p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="finance5.html">
+                        <img src="ultra-detailed-nebula-abstract-wallpaper-4_1562-749.avif" alt="Article 3 Image">
+                        <h3>How to Build a Diversified Investment Portfolio
+                        </h3>
+                        <p>Start by defining your financial goals and investment horizon.</p>
+                        </a>
+                    </article>
+                    <!-- Add more articles as needed -->
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      
+
+       
+    </div>    
+  <div class="ooter">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="share">
+            <h3>Share</h3>
+            <div class="ocial-icons">
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
+            </div>
+        </div>
+ </div>
+
+    </div>
+    
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+const menuToggle = document.querySelector('.menu-toggle');
+const featuredToggle = document.querySelector('.toggle-featured');
+const featuredPosts = document.getElementById('featured-posts');
+
+menuToggle.addEventListener('click', function () {
+    toggleMenu();
+});
+
+featuredToggle.addEventListener('click', function () {
+    featuredPosts.classList.toggle('closed');
+});
+
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+});
+
+</script>
+
+<script>
+    document.querySelectorAll('.question-container').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                item.querySelector('.plus-sign').textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                item.querySelector('.plus-sign').textContent = '-';
+            }
+        })
+    });
+
+    document.getElementById('submit-question').addEventListener('click', () => {
+        const userQuestion = document.getElementById('user-question').value;
+        if (userQuestion.trim()) {
+            alert(`Your question: "${userQuestion}" has been submitted!`);
+            document.getElementById('user-question').value = '';
+        } else {
+            alert('Please enter a question.');
+        }
+    });
+</script>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelector('.carousel-slide');
+        const totalSlides = slides.children.length;
+        const slideWidth = slides.children[0].offsetWidth;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+</script>
+</html>

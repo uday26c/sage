@@ -1,0 +1,663 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+header {
+    background-color:rgb(29, 26, 26);
+    
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    */
+
+/* Dropdown Styles */
+.dropbtn {
+    background-color:#00000033;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+        .contain {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .hammer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+        }
+
+        .blog-text {
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        h3{
+            font-size:1.5em;
+             margin:20px 0;
+           display: flex;
+            align-items: center;
+        }
+
+        .subheading-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        padding: 20px;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+        
+
+
+    }
+
+    .sidebar {
+        
+        margin-top: 20px;
+        padding-left: 0;
+        
+    }
+
+
+    
+    .related-articles {
+            background-color: #f9f9f9;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-articles h2 {
+            margin-top: 0;
+        }
+
+        .related-articles .articles-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .related-articles ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .related-articles li {
+            flex: 1 0 calc(33.333% - 10px);
+            margin: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .related-articles li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+        }
+
+        .related-articles li img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .related-articles li h3 {
+            margin: 10px 0;
+        }
+
+        .related-articles li p {
+            margin: 0;
+            color: #666;
+        }
+
+        .related-articles .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .related-articles .button.left {
+            left: 10px;
+        }
+
+        .related-articles .button.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .related-articles li {
+                flex: 1 0 calc(100% - 10px);
+            }
+        }
+
+    </style>
+    <style>
+    
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+    .ooter {
+        background-color:rgb(44, 39, 42);
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            
+        }
+
+        .about-us,
+        .quick-links,
+        .share {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-us h3,
+        .quick-links h3,
+        .share h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 5px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .ocial-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .ocial-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .ocial-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .ocial-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /*fq */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #b37b7b44;
+            color: #444035;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question {
+            margin: 0;
+        }
+
+        .plus-sign {
+            font-size: 1.5em;
+        }
+
+        .answer {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ask-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ask-question input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ask-question input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: rgb(108, 209, 108);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: white;">StrangeSage</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="post.html" class="dropbtn">Posts &#9662;</a>
+                        <div class="dropdown-content">
+                            
+                        </div>
+                        <li><a href="aboutus.html">About</a></li>
+                    <li><a href="contact.html"></a>Contact</li>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="contain">
+        <div class="hammer">
+            
+       <h1>Top 10 Programming Languages to Learn in 2024</h1>
+       <p class="blog-text">As technology continues to evolve at a rapid pace, the demand for skilled programmers is higher than ever. Whether you're an aspiring developer or a seasoned professional looking to stay ahead of the curve, choosing the right programming languages to learn is crucial. In 2024, several languages are set to dominate the industry, offering diverse opportunities across various fields such as web development, data science, mobile apps, and more. This guide will explore the top 10 programming languages to learn this year, considering factors like market demand, versatility, community support, and future potential, helping you make informed decisions for your career.</p>
+       <h3>1. Python
+    </h3>
+       <img src="https://ioflood.com/blog/wp-content/uploads/2023/09/Collage-of-Python-programming-aspects-syntax-libraries-Python-symbols-logo-300x300.jpg.webp" class="ghost-image" alt="">
+       <p class="blog-text">Python continues to be a top choice for developers due to its readability and ease of learning. Its versatile nature makes it suitable for various applications, from web development with frameworks like Django and Flask to data analysis and machine learning with libraries such as Pandas and TensorFlow. Python’s extensive ecosystem and strong community support also facilitate rapid development and integration with other technologies. Its use in automation, artificial intelligence, and scientific computing further underscores its importance in modern technology landscapes. Whether you’re a beginner or an experienced coder, Python’s broad applicability makes it a valuable addition to any programmer’s skill set.
+    </p>
+       <h3>2. JavaScript</h3>
+       <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*LyZcwuLWv2FArOumCxobpA.png" class="ghost-image" alt="">
+       <p class="blog-text">JavaScript is a cornerstone of web development, essential for creating interactive and dynamic web pages. It runs on virtually every modern web browser, enabling developers to build client-side applications that enhance user experience. With the rise of frameworks and libraries like React, Angular, and Vue.js, JavaScript’s role has expanded to include sophisticated front-end development and even server-side programming through Node.js. Its versatility also extends to mobile app development with tools like React Native. JavaScript’s vast ecosystem and constant evolution make it indispensable for anyone involved in web technologies, ensuring its relevance well into 2024 and beyond.</p>
+       <h3>3. Java</h3>
+       <img src="https://www.devopsschool.com/blog/wp-content/uploads/2022/03/java_logo_icon_168609.png" class="ghost-image" alt="">
+       <p class="blog-text">Java’s robustness and reliability have established it as a staple in enterprise environments and large-scale applications. Its object-oriented nature and platform independence, achieved through the Java Virtual Machine (JVM), make it ideal for developing cross-platform applications. Java is extensively used in Android app development, large-scale web applications, and enterprise-level systems. Its strong community, extensive libraries, and frameworks like Spring and Hibernate contribute to its enduring popularity. Java’s ability to handle complex, high-performance tasks ensures it remains a critical skill for developers working on enterprise solutions, big data applications, and cloud services. </p>
+       <h3>4. C#</h3>
+       <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fblog_post_page%2F4087150%2Fcover_image%2Fretina_300x120%2Fcover-0828_AfterAllTheseYearstheWorldisStillPoweredbyCProgramming_Razvan_Newsletter-617a3842c0ed375ade6e72ec64125d64.png" class="ghost-image" alt="">
+       <p class="blog-text">C# is a versatile language developed by Microsoft that plays a pivotal role in the .NET ecosystem. It is widely used for building Windows applications, game development with Unity, and enterprise software solutions. C# combines the power of C++ with the simplicity of higher-level languages, making it a strong choice for developing scalable and maintainable applications. Its integration with Microsoft’s development tools and Azure cloud services enhances its appeal for building modern, cloud-based applications. With features like strong typing, garbage collection, and advanced debugging capabilities, C# remains a key language for developing high-performance applications across various platforms.
+    </p>
+       <h3>5. Go (Golang)
+    </h3>
+       <img src="https://dce0qyjkutl4h.cloudfront.net/wp-content/uploads/2020/10/golang-Programing.jpg" class="ghost-image" alt="">
+       <p class="blog-text">Go, also known as Golang, is a statically typed language developed by Google that emphasizes simplicity and performance. Its efficient concurrency model, achieved through goroutines and channels, makes it ideal for building scalable and high-performance applications, particularly in cloud computing and backend systems. Go’s minimalistic design and fast compilation times contribute to its popularity in developing microservices and distributed systems. Its growing adoption by companies like Google, Dropbox, and Docker highlights its effectiveness in real-world applications. As the demand for efficient, concurrent processing increases, Go’s role in modern software development is set to expand.
+    </p>
+       <h3>6. Rust
+    </h3>
+       <img src="https://www.developer-tech.com/wp-content/uploads/2021/02/rust-foundation-programming-language-development-developer-768x432.jpg" class="ghost-image" alt="">
+       <p class="blog-text">Rust is celebrated for its focus on memory safety and performance, making it a strong choice for system-level programming. Its ownership system and strict compiler checks eliminate common bugs like null pointer dereferences and buffer overflows, which are crucial for developing reliable and secure software. Rust’s concurrency model also allows for safe, parallel processing, enhancing performance without sacrificing safety. Its growing use in performance-critical applications, including web browsers and game engines, showcases its potential. As industries seek more robust and efficient solutions, Rust’s emphasis on safety and performance positions it as a key language for future software development.
+
+       </p>
+       <h3>7. Kotlin</h3>
+       <img src="https://s3.ap-southeast-1.amazonaws.com/arrowhitech.com/wp-content/uploads/2020/09/04082531/1_99YiKjwB2TliKVA-yGogNQ-768x403.png" class="ghost-image" alt="">
+       <p class="blog-text">Kotlin, developed by JetBrains, has quickly become the preferred language for Android development, offering a modern alternative to Java. Its concise syntax, null safety, and interoperability with existing Java codebase make it a powerful tool for building Android apps. Kotlin’s support for functional programming and extension functions enhances its versatility, enabling developers to write cleaner and more maintainable code. Beyond Android development, Kotlin is also gaining traction for backend development with frameworks like Ktor. Its growing adoption and active development community contribute to Kotlin’s reputation as a modern, versatile language that simplifies complex development tasks.</p>
+       <h3>8. Swift</h3>
+       <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*saOldy_-VnU4eNQ5Ywcfqw.png" class="ghost-image" alt="">
+       <p class="blog-text">Swift, Apple’s programming language, is designed for developing iOS and macOS applications. It combines performance with ease of use, providing a modern alternative to Objective-C with features like type safety and memory management. Swift’s speed and safety features, such as automatic reference counting and optional types, make it ideal for creating high-quality, efficient apps. Its integration with Apple’s development environment, Xcode, and its open-source nature contribute to its growing popularity. As the demand for mobile applications continues to rise, Swift’s role in the Apple ecosystem makes it a critical language for developers targeting iOS and macOS platforms.
+    </p>
+       <h3>9. TypeScript
+    </h3>
+       <img src="https://media.licdn.com/dms/image/D5612AQF1X3R7A10-GA/article-cover_image-shrink_720_1280/0/1696269587807?e=2147483647&v=beta&t=RezCmM0hMmBFdllWBKTmYA7hpmvTbBKjP8DSmV8cnUQ" class="ghost-image" alt="">
+       <p class="blog-text">TypeScript is a superset of JavaScript that introduces static typing, making it a valuable tool for building large-scale applications. By adding type annotations, TypeScript enhances code quality and maintainability, reducing the likelihood of runtime errors and improving development efficiency. Its compatibility with existing JavaScript code and support for modern JavaScript features ensure a smooth transition for developers familiar with JavaScript. Frameworks like Angular and tools like Visual Studio Code further enhance its appeal. As applications become more complex, TypeScript’s ability to provide robust, scalable codebases positions it as an essential language for modern web development.
+    </p>
+       <h3>10. PHP</h3>
+       <img src="https://www.smartsight.in/wp-content/uploads/2020/11/php-300x165.png" class="ghost-image" alt="">
+       <p class="blog-text">PHP remains a key language for server-side web development, powering many dynamic websites and content management systems like WordPress and Drupal. Its simplicity and effectiveness in handling server-side logic make it a popular choice for web developers. PHP’s extensive documentation, widespread hosting support, and integration with various databases, including MySQL, contribute to its continued relevance. Despite the emergence of newer languages, PHP’s role in web development remains significant, particularly for maintaining and developing legacy systems. As web development evolves, PHP’s enduring presence and adaptability ensure it remains a valuable language for building and managing dynamic web applications.
+    </p>
+        </div>
+
+        
+    <div class="faq-container">
+        <h1 class="fq">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">1. Which programming language is best for beginners?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Python is often recommended for beginners due to its simple syntax and versatility.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">Are older programming languages still relevant in 2024?
+                </div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Yes, older languages like Java and PHP remain relevant due to their extensive use in legacy systems and ongoing demand in the industry.            </div>
+        </div>
+        <div class="faq-item">
+            <div class="question-container">
+                <div class="question">Practical knowledge is important in coding?</div>
+                <div class="plus-sign">+</div>
+            </div>
+            <div class="answer">Yes, In programming pracice is imortant</div>
+        </div>
+        
+        <div class="ask-question">
+            <h2>Have a Question?</h2>
+            <input type="text" id="user-question" placeholder="Type your question here...">
+            <input type="submit" id="submit-question" value="Submit">
+        </div>
+    </div>
+
+    
+
+
+        
+    
+    </div>    
+    <div class="ooter">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="share">
+            <h3>Share</h3>
+            <div class="ocial-icons">
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+
+<script>
+    let currentIndex = 0;
+
+    function slide(direction) {
+        const container = document.querySelector('.articles-container');
+        const articles = container.querySelectorAll('li');
+        const articleWidth = articles[0].offsetWidth + 10; // including margin
+        const containerWidth = container.offsetWidth;
+        const maxIndex = articles.length - Math.floor(containerWidth / articleWidth);
+
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        } else if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+
+        container.style.transform = `translateX(-${currentIndex * articleWidth}px)`;
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+const menuToggle = document.querySelector('.menu-toggle');
+const featuredToggle = document.querySelector('.toggle-featured');
+const featuredPosts = document.getElementById('featured-posts');
+
+menuToggle.addEventListener('click', function () {
+    toggleMenu();
+});
+
+featuredToggle.addEventListener('click', function () {
+    featuredPosts.classList.toggle('closed');
+});
+
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+});
+
+</script>
+
+<script>
+    document.querySelectorAll('.question-container').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                item.querySelector('.plus-sign').textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                item.querySelector('.plus-sign').textContent = '-';
+            }
+        })
+    });
+
+    document.getElementById('submit-question').addEventListener('click', () => {
+        const userQuestion = document.getElementById('user-question').value;
+        if (userQuestion.trim()) {
+            alert(`Your question: "${userQuestion}" has been submitted!`);
+            document.getElementById('user-question').value = '';
+        } else {
+            alert('Please enter a question.');
+        }
+    });
+</script>
+</html>
