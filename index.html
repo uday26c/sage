@@ -9,533 +9,505 @@
     <title>StrangeSage-Discover Unique Insights and Ideas at StrangeSage Online</title>    </title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* General Styles */
         body {
-           font-family: 'Arial', sans-serif;
-           margin: 0;
-           padding: 0;
-           background-color: #f5f5f5;
-           color: #333;
-       }
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-       header {
-   background-color: rgb(29, 26, 26);
-   color: #fff;
-   padding: 20px 0;
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+        }
+          
+        .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-header .container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid #fff;
 }
 
-header h1 {
-   margin: 0;
-   padding-left: 30px;
+.search-bar input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease;
 }
 
-nav ul {
-   list-style-type: none;
-   padding: 0;
+.search-bar button {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-nav ul li {
-   display: inline;
-   margin-right: 20px;
+.search-bar button img {
+    width: 20px;
+    vertical-align: middle;
 }
 
-nav ul li a {
-   text-decoration: none;
-   color: #fff;
+.search-bar button:hover {
+    background-color: #ff4f41;
 }
 
-nav ul li a:hover {
-   text-decoration: underline;
+.search-bar input:focus {
+    width: 300px;
 }
+        
 
+        
 
-/* Dropdown Styles */
-.dropbtn {
-   background-color:rgb(29, 26, 26);
-     
-   color: white;
-   padding: 10px;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
+        /* Hero Section */
+        .hero {
+            background: url('path/to/hero-image.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
 
-.dropdown {
-   position: relative;
-   display: inline-block;
-}
+        .hero-content {
+            max-width: 600px;
+            margin: auto;
+        }
 
-.dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #f9f9f9;
-   min-width: 160px;
-   z-index: 1;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   border-radius: 5px;
-}
+        .cta-button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
 
-.dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
-}
+        .cta-button:hover {
+            background-color: #ff4f41;
+        }
 
-.dropdown-content a:hover {
-   background-color: #f1f1f1;
-}
+        /* Featured Content */
+        .featured-content {
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+        }
 
-.dropdown:hover .dropdown-content {
-   display: block;
-}
+        .featured-articles {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-.hero {
-           height: 100vh;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           align-items: center;
-           text-align: center;
-           background: url(geometric-gradient-futuristic-background_23-2149116406.avif) no-repeat center center/cover; /* Change this URL to your image */
-           color: #fff;
-           padding: 20px;
-           margin-top: 60px;
-       }
+        .featured-articles article {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-       .hero h1 {
-           font-size: 48px;
-           margin-bottom: 10px;
-       }
+        .featured-articles h3 {
+            margin-top: 10px;
+        }
 
-       .hero h2 {
-           font-size: 24px;
-           margin-bottom: 20px;
-       }
-     /*
-       .hero button {
-           background: #333;
-           color: #fff;
-           border: none;
-           padding: 15px 30px;
-           font-size: 16px;
-           cursor: pointer;
-           transition: background 0.3s ease;
-       }
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-       .hero button:hover {
-           background: #555;
-       }
-           */
+        .about a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-       .cta-section {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           padding: 40px 20px;
-           background:url(photo-1512188066-4f19f566a388.avif);
-           margin: 20px 0;
-           border-radius: 10px;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-       }
+        .about a:hover {
+            background-color: #555;
+        }
 
-       .cta-section h3 {
-           font-size: 32px;
-           margin-bottom: 20px;
-       }
+        /* Latest Posts */
+        .latest-posts {
+            padding: 50px 20px;
+        }
 
-       .cta-section p {
-           font-size: 18px;
-           margin-bottom: 30px;
-       }
+        .posts {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-       .cta-section button {
-           background:#333;
-           color: #fff;
-           border: none;
-           padding: 15px 30px;
-           font-size: 16px;
-           cursor: pointer;
-           transition: background 0.3s ease;
-       }
+        .posts article {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-       .cta-section button:hover {
-           background: #feb47b;
-       }
-
-       .news-section {
-           padding: 40px 20px;
-           background-color: #f9f9f9;
-       }
-
-       .news-section h3 {
-           font-size: 28px;
-           margin-bottom: 20px;
-           text-align: center;
-       }
-
-       .news-articles {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: space-around;
-       }
-
-       .news-article {
-           background: #fff;
-           width: 300px;
-           margin: 10px;
-           border-radius: 10px;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-           overflow: hidden;
-       }
-
-       .news-article img {
-           width: 100%;
-           height: auto;
-       }
+        /* Newsletter Signup */
        
 
-       .news-article h4 {
-           font-size: 20px;
-           padding: 15px;
-       }
+ 
 
-       .news-article p {
-           font-size: 16px;
-           padding: 0 15px 15px;
-       }
-       .nav-active .nav-links {
-               display: flex;
+   /* Responsive Design */
+        @media (max-width: 768px) {
+            .featured-articles, .posts {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+          /* Responsive Styles for max-width 480px */
+          @media (max-width: 480px) {
+           
+
+           .footer-content {
+               flex-direction: column;
            }
 
-/* Footer Styles */
-footer {
-           background-color:rgb(44, 39, 42);
-                   
-           padding: 20px;
-           display: flex;
-           justify-content: space-around;
-           align-items: center;
-           color: #fff;
+           .footer-content div {
+               text-align: center;
+           }
+
+           .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+               padding-left: 100px;
+
+           }
+
+           .footer-newsletter button {
+               width: 100%;
+            padding-left: 100px;
+               
+           }
        }
 
-       .about-us,
-       .quick-links,
-       .share {
-           flex: 1;
-           margin-right: 20px;
-       }
-
-       .about-us h3,
-       .quick-links h3,
-       .share h3 {
-           margin-bottom: 10px;
-       }
-
-       .quick-links ul {
-           list-style-type: none;
-           padding: 0;
-       }
 
        
-       .quick-links li {
-           margin-bottom: 5px;
-       }
+       .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-       .quick-links a {
-           text-decoration: none;
-           color: #ccc;
-       }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-       .social-icons {
-           display: flex;
-           align-items: center;
-       }
+        .footer-content div {
+            flex: 1;
+            margin: 10px;
+            text-align: left;
+        }
 
-       .social-icons a {
-           margin-right: 15px;
-           transition: transform 0.3s ease;
-       }
+        .footer h3 {
+            margin-bottom: 15px;
+        }
 
-       .social-icons a:hover {
-           transform: scale(1.2);
-       }
+        @media (max-width:480px){ 
+        .footer-links{
+            padding-left: 90px;
+        }
+        .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+               padding-left: 100px;
 
-       .social-icons img {
-           width: 30px;
-           height: 30px;
-       }
-.menu-toggle {
-   display: none;
-   background: none;
-   border: none;
-   font-size: 24px;
-   cursor: pointer;
-   color: #fff;
-}
+           }
 
-@media (max-width: 768px) {
-   .menu-toggle {
-       display: block;
-       position: absolute;
-       top: 20px;
-       right: 20px;
-   }
+           .footer-newsletter button {
+               width: 100%;
+            padding-left: 100px;
+               
+           }
+           .footer-newsletter{
+            padding-left: 70px;
+           }
+    }
+        .footer-links ul {
+            list-style: none;
+        }
 
-   header {
-       position: relative;
-   }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
 
-   nav {
-       display: none;
-       position: absolute;
-       top: 100%;
-       left: 0;
-       width: 100%;
-   background-color:rgb(29, 26, 26);
-         
-       z-index: 1000;
-       
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-   }
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
 
-   nav.active {
-       display: block;
-   }
+        .footer-newsletter input[type="email"] {
+            width: calc(100% - 100px);
+            width: 100px;
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: none;
+            
+        }
 
-   nav ul {
-       padding: 20px;
-       margin: 0;
-       list-style-type: none;
-       text-align: center;
-   }
+        .footer-newsletter button {
+            padding: 10px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #333;
+            width: 100px;
+            
 
-   nav ul li {
-       margin-bottom: 10px;
-   }
+        }
 
-   nav ul li:last-child {
-       margin-bottom: 0;
-   }
+        .footer-newsletter button:hover {
+            background-color: #e1a000;
+        }
 
-   nav ul li a {
-       color: #fff;
-       text-decoration: none;
-       font-size: 18px;
-   }
-}
+        .footer-social a {
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-social img{
+            width: 30px;
+            height: 30px;
+        }
 
-@media (min-width: 769px) {
-   nav {
-       display: block;
-   }
-}
-/*comparment*/
-.container {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           grid-gap: 20px;
-           width: 80%;
-       }
+        .footer-social a:hover {
+            color: #f4b400;
+        }
 
-       .compartment {
-           background-color: #fff;
-           padding: 20px;
-           border-radius: 10px;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           text-align: center;
+        .footer-legal a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+          /* Responsive Styles for max-width 480px */
+          @media (max-width: 480px) {
            
-       }
 
-       .compartment h2 {
-           font-size: 24px;
-           margin-bottom: 10px;
-       }
+            .footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
 
-       .compartment p {
-           font-size: 16px;
-       }
+            .footer .social-media {
+                margin-top: 10px;
+            }
 
-       .info {
-           background-color: #e0f7fa;
-       }
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 1.2rem;
+            }
+        }
 
-       .warning {
-           background-color: #fff3e0;
-       }
-
-       .error {
-           background-color: #ffebee;
-       }
-
-       .success {
-           background-color: #e8f5e9;
-       }
-       
-
-       
-a {
-   color: inherit; /* Inherit color from parent element */
-   text-decoration: none; /* Remove underline */
-}
-
-a:hover {
-   text-decoration: none; /* Ensure underline is removed on hover */
-   color: inherit; /* Maintain the color on hover */
-}
-
-a:visited {
-   color: inherit; /* Maintain color consistency for visited links */
-}
-   </style>
+    </style>
 </head>
 <body>
-   <header>
-       <div class="container">
-           <h1>StrangeSage</h1>
-           <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
-           <nav>
-               <ul>
-                   <li><a href="index.html">Home</a></li>
-                   <li class="dropdown">
-                       <a href="" class="dropbtn">Latest</a>
-                       <div class="dropdown-content">
-                           
-                           
-                       </div>
-                   </li>
-                   <li><a href="post.html">Posts</a></li>
-                   <li><a href=""></a>Contact</li>
-                   
-               </ul>
-           </nav>
-       </div>
-   </header>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">StrangeSage</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Latest.html">Latest</a></li>
+                <li><a href="post.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to StrangeSage</h1>
+            <p>Your go-to resource for insightful blog posts on diverse topics.</p>
+            <a href="blog.html" class="cta-button">Read Latest Articles</a>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="featured-content">
+        <h2>Featured Articles</h2>
+        <div class="featured-articles">
+            <article>
+                <img src="depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Featured Article 1">
+                <h3>Article Title 1</h3>
+                <p>Short description of the article...</p>
+                <a href="article1.html">Read More</a>
+            </article>
+            <article>
+                <img src="depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Featured Article 2">
+                <h3>Article Title 2</h3>
+                <p>Short description of the article...</p>
+                <a href="article2.html">Read More</a>
+            </article>
+            <article>
+                <img src="depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Featured Article 3">
+                <h3>Article Title 3</h3>
+                <p>Short description of the article...</p>
+                <a href="article3.html">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About StrangeSage</h2>
+        <p>Learn more about us and what we offer.</p>
+        <a href="about.html">Read More</a>
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="latest-posts">
+        <h2>Latest Posts</h2>
+        <div class="posts">
+            <article>
+                <img src="https://st2.depositphotos.com/30845988/42657/i/380/depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Latest Post 1">
+                <h3>Latest Post 1</h3>
+                <p>Brief excerpt from the post...</p>
+                <a href="latest1.html">Read More</a>
+            </article>
+            <article>
+                <img src="depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Latest Post 2">
+                <h3>Latest Post 2</h3>
+                <p>Brief excerpt from the post...</p>
+                <a href="latest2.html">Read More</a>
+            </article>
+            <article>
+                <img src="depositphotos_426579570-stock-photo-inscription-laptop-code-background-learn.jpg" alt="Latest Post 3">
+                <h3>Latest Post 3</h3>
+                <p>Brief excerpt from the post...</p>
+                <a href="latest3.html">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
    
 
-   <section class="hero">
-       <h1>Welcome to World</h1>
-       <h2>Your gateway to modern web experiences.</h2>
-           
-   </section>
-   <section class="cta-section">
-       <h3>Join Us Today!</h3>
-       <p>Sign up now to stay updated with the latest news and special offers.</p>
-       <button>Sign Up</button>
-   </section>
-   <div class="container">
-       <div class="compartment info">
-           <div>
-               <h3>"Believe you can and you're halfway there."</h3>
-           </div>
-       </div>
-       <div class="compartment warning">
-           <div>
-               <h3>"The only way to do great work is to love what you do."</h3>
-           </div>
-       </div>
-       <div class="compartment error">
-           <div>
-           <h3>"Success is not the key to happiness. Happiness is the key to success."</h3>
-           </div>
-       </div>
-       <div class="compartment success">
-           <div>
-              <h3>"Your attitude, not your aptitude, will determine your altitude."</h3> 
-               
-           </div>
-       </div>
-   </div>
-   <section class="news-section">
-       <h3>Articles</h3>
-       <div class="news-articles">
-           <a href="tech1.html">
-           <div class="news-article">
-               <img src="https://images.pexels.com/photos/11035472/pexels-photo-11035472.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News Image 1">
-               <h4>How to start coding as beginner</h4>
-               <p>Coding, the process of creating instructions for computers using programming languages,</p>
-           </div>
-           </a>
-           <a href="health2.html">
-           <div class="news-article">
-               <img src="https://mantracare.org/wp-content/uploads/2022/11/How-To-Improve-Physical-Health-1536x804.jpeg" alt="News Image 2">
-               <h4>How to Improve Your Physical Fitness at Home
-               </h4>
-               <p>Improving your physical fitness at home is both convenient and effective,</p>
-           </div>
-           </a>
-           <a href="finance1.html">
-           <div class="news-article">
-               <img src="https://www.livemint.com/lm-img/img/2024/06/03/600x338/Nifty_1667546435835_1717410694965.jpg" alt="News Image 3">
-               <h4>Stock Market Investing for Beginners</h4>
-               <p>Stock market investing can seem daunting for beginners</p>
-           </div>
-           </a>
-           <a href="health5.html">
-           <div class="news-article">
-               <img src="https://www.hccb.in/images/34991210106_d305469765_c.jpg" alt="News Image 1">
-               <h4>How to Improve Your Mental Focus</h4>
-               <p>Enhancing mental focus is essential for achieving productivity and maintaining clarity</p>
-           </div>
-           </a>
-         
-          
-           
-       </div>
-   </section>
-   <footer>
-       <div class="about-us">
-           <h3>About Us</h3>
-           <p>We are dedicated to providing quality content and resources for fitness enthusiasts.</p>
-       </div>
-       <div class="quick-links">
-           <h3>Quick Links</h3>
-           <ul>
-               <li><a href="#">Home</a></li>
-               <li><a href="#">Blog</a></li>
-               <li><a href="#">About</a></li>
-               <li><a href="#">Contact</a></li>
-           </ul>
-       </div>
-       <div class="share">
-           <h3>Share</h3>
-           <div class="social-icons">
-               <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/instagram.svg" alt="Instagram"></a>
-               <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/twitter.svg" alt="Twitter"></a>
-               <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/facebook.svg" alt="Facebook"></a>
-               <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/youtube.svg" alt="YouTube"></a>
-               <a href="#"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/gmail.svg" alt="Gmail"></a>
-           </div>
-       </div>
-   </footer>
-   <script>
-       document.addEventListener('DOMContentLoaded', function () {
-   const menuToggle = document.querySelector('.menu-toggle');
-   const featuredToggle = document.querySelector('.toggle-featured');
-   const featuredPosts = document.getElementById('featured-posts');
-
-   menuToggle.addEventListener('click', function () {
-       toggleMenu();
-   });
-
-   featuredToggle.addEventListener('click', function () {
-       featuredPosts.classList.toggle('closed');
-   });
-
-   function toggleMenu() {
-       const nav = document.querySelector('nav');
-       nav.classList.toggle('active');
-   }
-});
-
-   </script>
+    <!-- Footer -->
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@strangesage.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-icons-23/800/instagram-512.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 StrangeSage. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
