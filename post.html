@@ -436,10 +436,10 @@ a:visited {
                 </div>
                 <div class="filter-container">
                     <select id="category-filter">
-                        <option value="">All Categories</option>
+                        <option value="">All</option>
                         <option value="tech">Tech</option>
                         <option value="finance">Finance</option>
-                        <option value="lifestyle">Lifestyle</option>
+                        <option value="health">Health</option>
                     </select>
                 </div>
             </div>
@@ -498,67 +498,149 @@ a:visited {
             </div>
         </div>
     </footer>
-    <!-- Optional JavaScript -->
-    <script>
+     <!-- Optional JavaScript -->
+     <script>
         // Sample posts data with categories
         const additionalPosts = [
             {
                 category: "tech",
-                title: "Exploring the Metaverse",
-                description: "A deep dive into the concept of the metaverse and its potential impact.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                title: "how to start coding as beginner",
+                description: "Coding, the process of creating instructions for computers using programming languages",
+                image: "https://images.pexels.com/photos/11035472/pexels-photo-11035472.jpeg?auto=compress&cs=tinysrgb&w=300",
+                link: "tech1.html" // Add a link for the title
+            },
+            {
+             category:"tech",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"finance",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"health",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"tech",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"finance",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"health",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            }, {
+             category:"tech",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"finance",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
+            },
+            {
+             category:"health",
+             title:"",
+             description:"",
+             image:"",
+             link:""
+
             },
             {
                 category: "tech",
-                title: "The Future of AI",
-                description: "Explore how artificial intelligence is set to transform various industries in the coming years.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                title: "How to Create a Successful YouTube Channel",
+                description: "Creating a successful YouTube channel on tech reviews requires a blend of passion",
+                image: "https://fabrikbrands.com/wp-content/uploads/How-To-Define-Your-Niche-Audience-01-scaled-761x507.jpg",
+                link: "tech2.html" // Add a link for the title
             },
             {
                 category: "tech",
-                title: "Quantum Computing: The Next Big Leap",
-                description: "Understand the principles of quantum computing and its potential to revolutionize technology.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                title: "How to Optimize Your Website for SEO ",
+                description: "Optimizing your website for SEO in 2024 requires staying ahead of evolving search engine .",
+                image: "https://www.elegantthemes.com/blog/wp-content/uploads/2021/12/et-seo-audit-blog-post-1.jpg",
+                link: "tech3.html" // Add a link for the title
+            },
+
+            
+            {
+                category: "finance",
+                title: "Stock Market Investing for Beginners",
+                description: "Stock market investing can seem daunting for beginner.",
+                image: "https://www.livemint.com/lm-img/img/2024/06/03/600x338/Nifty_1667546435835_1717410694965.jpg",
+                link: "finance1.html" // Add a link for the title
             },
             {
                 category: "finance",
-                title: "Investment Strategies for 2024",
-                description: "Learn about the most promising investment strategies to consider in the upcoming year.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                title: "How to Choose the Right Stocks for Your Portfolio",
+                description: "Choosing the right stocks for your portfolio is crucial to achieving your financial goals and managing risk.",
+                image: "https://www.author.thinkwithniche.com/allimages/project/thumb_313d4choose-the-right-stocks-for-portfolio.jpg",
+                link: "finance2.html" // Add a link for the title
             },
             {
                 category: "finance",
-                title: "Understanding Cryptocurrency",
-                description: "A comprehensive guide to understanding cryptocurrencies and their impact on the global economy.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                title: "Top 10 Tax-saving Strategies to Reduce Your Tax Bill",
+                description: "Reducing your tax bill legally and effectively requires strategic planning and awareness.",
+                image: "https://www.canarahsbclife.com/content/dam/choice/tax-university/images/6-ways-to-save-income-tax-in-india.jpg",
+                link: "finance3.html" // Add a link for the title
             },
             {
-                category: "finance",
-                title: "Cryptocurrency Trends in 2024",
-                description: "What to expect from the cryptocurrency market in the year 2024.",
-                image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-            },
-            {
-                category: "lifestyle",
+                category: "health",
                 title: "Healthy Living Tips",
                 description: "Discover practical tips and habits for a healthier lifestyle and improved well-being.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                link: "health1.html" // Add a link for the title
             },
-            {
-                category: "lifestyle",
+            { 
+                category: "health",
                 title: "Travel Destinations for 2024",
                 description: "Explore the top travel destinations to visit in 2024 and plan your next adventure.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                link: "health2.html" // Add a link for the title
             },
             {
-                category: "lifestyle",
+                category: "health",
                 title: "Sustainable Living Practices",
                 description: "Tips and practices for living a more sustainable lifestyle.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
+                link: "health3.html" // Add a link for the title
             }
         ];
 
-        let visiblePostCount = 3; // Number of posts initially visible
+        let visiblePostCount = 4; // Number of posts initially visible
         const postsGrid = document.getElementById('posts-grid');
         const loadMoreButton = document.getElementById('load-more');
         const loadInterval = 5000; // Time in milliseconds (5000 ms = 5 seconds)
@@ -582,7 +664,7 @@ a:visited {
 
                 postCard.innerHTML = `
                     <img src="${post.image}" alt="${post.title}" loading="lazy">
-                    <h2>${post.title}</h2>
+                    <h2><a href="${post.link}">${post.title}</a></h2>
                     <p>${post.description}</p>
                     <a href="#">Read More</a>
                 `;
@@ -617,7 +699,6 @@ a:visited {
                 }
             });
         });
-
         // JavaScript for filtering by category
         document.getElementById('category-filter').addEventListener('change', function() {
             const selectedCategory = this.value;
