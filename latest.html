@@ -349,7 +349,20 @@
                width: 100%;
            }
        }
+                   
+a {
+   color: inherit; /* Inherit color from parent element */
+   text-decoration: none; /* Remove underline */
+}
 
+a:hover {
+   text-decoration: none; /* Ensure underline is removed on hover */
+   color: inherit; /* Maintain the color on hover */
+}
+
+a:visited {
+   color: inherit; /* Maintain color consistency for visited links */
+}
     </style>
 </head>
 <body>
@@ -361,7 +374,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="latest.html">Latest</a></li>
-                <li><a href="latest.html">Posts</a></li>
+                <li><a href="post.html">Posts</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="search-bar">
