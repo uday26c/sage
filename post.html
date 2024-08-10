@@ -128,7 +128,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    
     bottom: 0;
     width: 100%;
 }
@@ -136,17 +136,296 @@ footer {
 
     
 .post-card img {
-    width: 50%;
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
 }
 
+  /* Navigation Bar */
+  header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+        }
+          
+        .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease;
+}
+
+.search-bar button {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.search-bar button:hover {
+    background-color: #ff4f41;
+}
+
+.search-bar input:focus {
+    width: 300px;
+}
+            /* Responsive Design */
+            @media (max-width: 768px) {
+           
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        
+          /* Responsive Styles for max-width 480px */
+          @media (max-width: 480px) {
+           
+
+           .footer-content {
+               flex-direction: column;
+           }
+
+           .footer-content div {
+               text-align: center;
+           }
+
+           .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+               padding-left: 100px;
+
+           }
+
+           .footer-newsletter button {
+               width: 100%;
+            padding-left: 100px;
+               
+           }
+       }
+
+
+       
+       .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content div {
+            flex: 1;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width:480px){ 
+        .footer-links{
+            padding-left: 90px;
+        }
+        .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+               padding-left: 100px;
+
+           }
+
+           .footer-newsletter button {
+               width: 100%;
+            padding-left: 100px;
+               
+           }
+           .footer-newsletter{
+            padding-left: 70px;
+           }
+    }
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-newsletter input[type="email"] {
+            width: calc(100% - 100px);
+            width: 100px;
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: none;
+            
+        }
+
+        .footer-newsletter button {
+            padding: 10px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #333;
+            width: 100px;
+            
+
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #e1a000;
+        }
+
+        .footer-social a {
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-social img{
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-social a:hover {
+            color: #f4b400;
+        }
+
+        .footer-legal a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+          /* Responsive Styles for max-width 480px */
+          @media (max-width: 480px) {
+           
+
+            .footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer .social-media {
+                margin-top: 10px;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 1.2rem;
+            }
+        }
+       
+              
+a {
+   color: inherit; /* Inherit color from parent element */
+   text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+   text-decoration: none; /* Ensure underline is removed on hover */
+   color: inherit; /* Maintain the color on hover */
+}
+
+a:visited {
+   color: inherit; /* Maintain color consistency for visited links */
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>All Posts</h1>
+     <!-- Navigation Bar -->
+     <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">StrangeSage</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -175,10 +454,50 @@ footer {
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 StrangeSage. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@strangesage.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-icons-23/800/instagram-512.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 StrangeSage. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
-
     <!-- Optional JavaScript -->
     <script>
         // Sample posts data with categories
@@ -188,63 +507,54 @@ footer {
                 title: "Exploring the Metaverse",
                 description: "A deep dive into the concept of the metaverse and its potential impact.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "metaverse.html" // Add a link for the title
             },
             {
                 category: "tech",
                 title: "The Future of AI",
                 description: "Explore how artificial intelligence is set to transform various industries in the coming years.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "contact.html" // Add a link for the title
             },
             {
                 category: "tech",
                 title: "Quantum Computing: The Next Big Leap",
                 description: "Understand the principles of quantum computing and its potential to revolutionize technology.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "quantum-computing.html" // Add a link for the title
             },
             {
                 category: "finance",
                 title: "Investment Strategies for 2024",
                 description: "Learn about the most promising investment strategies to consider in the upcoming year.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "investment-strategies-2024.html" // Add a link for the title
             },
             {
                 category: "finance",
                 title: "Understanding Cryptocurrency",
                 description: "A comprehensive guide to understanding cryptocurrencies and their impact on the global economy.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "understanding-cryptocurrency.html" // Add a link for the title
             },
             {
                 category: "finance",
                 title: "Cryptocurrency Trends in 2024",
                 description: "What to expect from the cryptocurrency market in the year 2024.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "crypto-trends-2024.html" // Add a link for the title
             },
             {
                 category: "lifestyle",
                 title: "Healthy Living Tips",
                 description: "Discover practical tips and habits for a healthier lifestyle and improved well-being.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "healthy-living-tips.html" // Add a link for the title
             },
-            { 
+            {
                 category: "lifestyle",
                 title: "Travel Destinations for 2024",
                 description: "Explore the top travel destinations to visit in 2024 and plan your next adventure.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "travel-destinations-2024.html" // Add a link for the title
             },
             {
                 category: "lifestyle",
                 title: "Sustainable Living Practices",
                 description: "Tips and practices for living a more sustainable lifestyle.",
                 image: "https://www.syte.ai/wp-content/webp-express/webp-images/uploads/2021/10/Glossary-Images-1-24_23-768x469.jpg.webp",
-                link: "sustainable-living.html" // Add a link for the title
             }
         ];
 
@@ -272,7 +582,7 @@ footer {
 
                 postCard.innerHTML = `
                     <img src="${post.image}" alt="${post.title}" loading="lazy">
-                    <h2><a href="${post.link}">${post.title}</a></h2>
+                    <h2>${post.title}</h2>
                     <p>${post.description}</p>
                     <a href="#">Read More</a>
                 `;
@@ -307,6 +617,7 @@ footer {
                 }
             });
         });
+
         // JavaScript for filtering by category
         document.getElementById('category-filter').addEventListener('change', function() {
             const selectedCategory = this.value;
