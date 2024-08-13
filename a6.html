@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Post Page</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        
+         /* Navigation Bar */
+         header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+        }
+          
+        .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease;
+}
+
+.search-bar button {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.search-bar button:hover {
+    background-color: #ff4f41;
+}
+
+.search-bar input:focus {
+    width: 300px;
+}
+      /* Responsive Design */
+      @media (max-width: 768px) {
+            
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }    
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .featured-image {
+            width: 75%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+        @media (max-width:768px){
+        .featured-image {
+          width: 100%;
+        }
+    }
+
+
+        .content {
+            margin-bottom: 50px;
+        }
+
+        .content h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .content blockquote {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-left: 5px solid #333;
+            font-style: italic;
+            color: #666;
+        }
+
+       
+        .ghost-image {
+            width: 60%;
+            height: auto;
+            margin: 20px;
+            align-items: center;
+        }
+        @media (max-width:769px){
+            .content img {
+                width: 100%;
+            }
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .author-info img {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #222;
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .related-articles {
+            margin-top: 50px;
+        }
+
+        .related-articles h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0073e6;
+        }
+
+        .related-article {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .related-article img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .related-article .info {
+            flex: 1;
+        }
+
+        .related-article .info h4 {
+            font-size: 18px;
+            margin: 0 0 5px;
+            color: #0073e6;
+        }
+
+        .related-article .info p {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+        }
+ 
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content div {
+            flex: 1;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-newsletter input[type="email"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .footer-newsletter button {
+            padding: 10px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #e1a000;
+        }
+
+        .footer-social a {
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-social img{
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-social a:hover {
+            color: #f4b400;
+        }
+
+        .footer-legal a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+
+         /* Responsive Styles for max-width 480px */
+         @media (max-width: 480px) {
+           
+
+           .footer-content {
+               flex-direction: column;
+           }
+
+           .footer-content div {
+               text-align: center;
+           }
+
+           .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+           }
+
+           .footer-newsletter button {
+               width: 100%;
+           }
+       }
+                     
+a {
+   color: inherit; /* Inherit color from parent element */
+   text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+   text-decoration: none; /* Ensure underline is removed on hover */
+   color: inherit; /* Maintain the color on hover */
+}
+
+a:visited {
+   color: inherit; /* Maintain color consistency for visited links */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">StrangeSage</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="latest.html">Latest</a></li>
+                <li><a href="post.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+       
+
+        
+
+        <div class="content">
+           <h1>How to Prevent Premature Aging with Effective Skincare
+        </h1>
+           <img src="https://cdn.shopify.com/s/files/1/0053/8866/4950/files/2__0000s_0003_causes_of_skin_aging_1024x1024.jpg?v=1676389140" class="featured-image" alt="">
+           <p>Preventing premature aging starts with a proactive skincare routine that protects and nurtures your skin. By incorporating effective strategies and products into your daily regimen, you can maintain youthful, radiant skin and minimize signs of aging. This guide will explore essential skincare practices, including sun protection, hydration, and targeted treatments, to help you combat early wrinkles, fine lines, and other aging signs, ensuring a timeless, vibrant complexion.
+        </p>
+           <h2>1. Use Sunscreen Daily
+        </h2>
+           <p>Apply a broad-spectrum sunscreen with SPF 30 or higher every morning to protect your skin from harmful UV rays. Sun exposure accelerates aging by causing wrinkles, sunspots, and loss of elasticity. Choose a sunscreen suitable for your skin type and reapply every two hours if you’re outdoors. Consistent use of sunscreen is crucial for preventing premature aging and maintaining youthful skin.
+        </p>
+           <h2>2. Incorporate Antioxidants
+        </h2>
+           <p>Add antioxidants like Vitamin C and E to your routine to combat free radical damage from environmental stressors. Vitamin C serums can brighten your complexion and even out skin tone, while Vitamin E helps protect and repair. Apply these products in the morning, before sunscreen, to enhance your skin’s defense against aging.
+        </p>
+           <h2>3. Stay Hydrated
+        </h2>
+           <p>Drink plenty of water throughout the day to keep your skin hydrated and maintain its elasticity. Hydrated skin is less prone to wrinkles and fine lines. Complement this by using a moisturizer with hydrating ingredients such as hyaluronic acid or glycerin to lock in moisture and keep your skin plump and smooth.
+        </p>
+           <h2>4. Use Retinoids
+        </h2>
+           <p>Introduce retinoids or retinol into your nighttime routine to stimulate collagen production and boost cell turnover. Retinoids help reduce the appearance of fine lines, wrinkles, and uneven texture. Start with a lower concentration to allow your skin to adjust, then gradually increase usage. Apply it every other night to avoid irritation.
+        </p>
+           <h2>5. Exfoliate Regularly
+        </h2>
+           <p>Exfoliate 1-2 times a week to remove dead skin cells and promote cell renewal. Gentle exfoliants like AHAs (e.g., glycolic acid) or BHAs (e.g., salicylic acid) improve skin texture and radiance. Regular exfoliation helps prevent dullness and smooths fine lines, contributing to a youthful appearance.
+        </p>
+           <h2>6. Prioritize Moisturization</h2>
+            
+           <p>Use a moisturizer daily to keep your skin’s moisture barrier intact. Choose a product with hydrating ingredients and ceramides to restore and protect your skin. Proper moisturization helps prevent dryness and flakiness, which can accentuate signs of aging. Apply moisturizer twice daily to maintain soft, supple skin.
+        </p> 
+           <h2>7. Avoid Smoking and Excessive Alcohol</h2>
+        
+           <p>Refrain from smoking and limit alcohol consumption, as both contribute to premature aging. Smoking reduces blood flow, leading to wrinkles and dull skin, while excessive alcohol dehydrates and damages skin. A healthy lifestyle supports overall skin health and helps preserve a youthful complexion.</p>
+
+
+        </div>
+
+        <div class="author-info">
+            <img src="" alt="Author Image">
+            <div>
+                <h4>june Dexter</h4>
+                <p>Storytelling Enthusiast and Digital Content Creator</p>
+            </div>
+        </div>
+
+        <div class="related-articles">
+            <h3>Related Articles</h3>
+
+            <div class="related-article">
+                <img src="https://www.realsimple.com/thmb/LZsru4YUsjHboASD4iBmh33E74o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/natural-skin-remedies-2000-70f6292db9394a198e68b25f374d500c.jpg" alt="Related Post 1">
+                <div class="info">
+                    <h4><a href="a4.html">How to Treat Acne with Natural Remedies</a></h4>
+                    <p>Treating acne with natural remedies offers a gentle, holistic approach to achieving clear skin.</p>
+                </div>
+            </div>
+
+            <div class="related-article">
+                <img src="https://www.garnier.in/-/media/project/loreal/brand-sites/garnier/apac/in/all-article-pages/men-skin-care/how-to-determine-your-skin-type/thumbnail-007.jpg?rev=9cb4c1a3c0f84990a4068f37f910afc5&h=334&w=600&la=en-IN&hash=E55F90F4431351357B4DB8D5D5484EC3" alt="Related Post 2">
+                <div class="info">
+                    <h4><a href="#"></a>How to Choose the Right Identify Your Skin Type</h4>
+                    <p>Understanding your skin type is the first step in choosing the right moisturizer</p>
+                </div>
+            </div>
+
+            <div class="related-article">
+                <img src="" alt="Related Post 3">
+                <div class="info">
+                    <h4><a href="#"></a>How to Develop a Daily Skincare Routine for Glowing Skin</h4>
+                    <p>Developing a daily skincare routine is essential for achieving and maintaining glowing skin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@strangesage.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-icons-23/800/instagram-512.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 StrangeSage. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
