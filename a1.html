@@ -524,7 +524,22 @@ a:visited {
             </div>
         </div>
     </footer>
+   
+     <script>
+        function createSlug(title) {
+    return title
+        .toLowerCase()              // Convert to lowercase
+        .trim()                     // Remove leading/trailing whitespace
+        .replace(/[^\w\s-]/g, '')   // Remove all non-word characters (punctuation, etc.)
+        .replace(/\s+/g, '-')       // Replace spaces with hyphens
+        .replace(/--+/g, '-');      // Replace multiple hyphens with a single one
+}
 
+// Example usage:
+const title = "start successfull blog";
+const slug = createSlug(title);
+console.log(slug); // Output: top-10-tips-for-effective-time-management
 
+     </script>
 </body>
 </html>
