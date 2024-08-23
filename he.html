@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-Style Article Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Article */
+        article {
+            background-color: #fff;
+            padding: 40px 0;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #000;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .author-details {
+            font-size: 0.9rem;
+        }
+
+        .article-intro {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            padding: 20px 0;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            article h1 {
+                font-size: 2rem;
+            }
+
+            .author-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .author-image {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            article h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-intro {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">StrangeSage</a>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Section -->
+    <article>
+        <div class="container">
+            <h1>Title of the Article</h1>
+            <div class="author-info">
+                <img src="author-image.jpg" alt="Author Image" class="author-image">
+                <div class="author-details">
+                    <p class="author-name">Roma</p>
+                    <p class="publish-date">August 23, 2024</p>
+                </div>
+            </div>
+            <p class="article-intro">This is a brief introduction or summary of the article. It should capture the reader's attention and provide an overview of what the article will cover.</p>
+            <p>This is the body of the article. Medium’s design is known for wide margins, spacious line height, and legible font size, making the reading experience very comfortable. You can also add more paragraphs, images, and quotes as needed.</p>
+            <p>Another paragraph with more content. Ensure the text is easy to read by using a sans-serif font like "Roboto" or "Open Sans."</p>
+        </div>
+    </article>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 StrangeSage. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
