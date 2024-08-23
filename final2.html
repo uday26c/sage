@@ -16,10 +16,10 @@
         }
 
         .container {
-            width: 800px;
-            margin: 0 auto;
-            max-width: 100%;
-        }
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+         }
 
         /* Header */
         /* Navigation Bar */
@@ -113,95 +113,70 @@
             }
         }
         /* Article */
-        article {
-            background-color: #fff;
-            padding: 40px 0;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      /* Article Styling */
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        article h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            color: #000;
-        }
+.author-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
 
-        .author-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+.author-details {
+    font-size: 14px;
+}
 
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
+.article-intro, .article-image {
+    margin-bottom: 20px;
+}
 
-        .author-details {
-            font-size: 0.9rem;
-        }
+.article-image {
+    max-width: 100%;
+    height: auto;
+}
 
-        .article-intro {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            font-weight: 500;
-            color: #555;
-        }
+/* Related Articles Section */
+.related-articles {
+    margin-top: 40px;
+}
 
-        .article-image {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
+.related-articles h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
-        p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        /* Related Articles Section */
-        .related-articles {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e5e5e5;
-        }
+.article {
+    flex: 1 1 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
 
-        .related-articles h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+.article img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
 
-        .related-articles .articles-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+.article h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
-        .related-articles .article {
-            width: 30%;
-            background-color: #fff;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-        }
-
-        .related-articles .article img {
-            width: 100%;
-            height: auto;
-        }
-
-        .related-articles .article h4 {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        .related-articles .article p {
-            font-size: 0.9rem;
-            color: #666;
-        }
+.article p {
+    font-size: 14px;
+}
 
        
 
@@ -235,24 +210,50 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                
-            }
+       
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
 
-            article h1 {
-                font-size: 1.8rem;
-            }
+    .author-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-            .article-intro {
-                font-size: 1rem;
-            }
+    .author-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
 
-            p {
-                font-size: 0.9rem;
-            }
-        }
+    .author-details {
+        font-size: 12px;
+    }
+
+    .article-image, .article img {
+        margin-bottom: 15px;
+    }
+
+    .articles-container {
+        flex-direction: column;
+    }
+
+    .article {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    .article h4 {
+        font-size: 14px;
+    }
+
+    .article p {
+        font-size: 12px;
+    }
+}
          
         .footer {
             background: #333;
