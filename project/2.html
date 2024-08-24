@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-Style Article Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+         }
+
+        /* Header */
+        /* Navigation Bar */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+        }
+          
+        .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease;
+}
+
+.search-bar button {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.search-bar button:hover {
+    background-color: #ff4f41;
+}
+
+.search-bar input:focus {
+    width: 300px;
+}
+        
+    /* Responsive Design */
+    @media (max-width: 768px) {
+            
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        /* Article */
+      /* Article Styling */
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.author-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.author-details {
+    font-size: 14px;
+}
+
+.article-intro, .article-image {
+    margin-bottom: 20px;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Related Articles Section */
+.related-articles {
+    margin-top: 40px;
+}
+
+.related-articles h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.article {
+    flex: 1 1 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+.article img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.article h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.article p {
+    font-size: 16px;
+}
+p{
+    font-size: 20px;
+}
+
+ h1 {
+                font-size: 35px;
+            }
+.ghost-image {
+            width: 70%;
+            height: auto;
+            margin: 20px;
+            align-items: center;
+        }
+
+       
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+           
+
+           
+
+            .author-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .author-image {
+                margin-bottom: 10px;
+            }
+
+            .related-articles .articles-container {
+                flex-direction: column;
+            }
+
+            .related-articles .article {
+                width: 100%;
+            }
+            h1{
+                font-size: 35px;
+            }
+            h2{
+                font-size: 29px;
+            }
+        }
+          
+
+
+
+       
+       
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .author-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .author-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .author-details {
+        font-size: 12px;
+    }
+
+    .article-image, .article img {
+        margin-bottom: 15px;
+    }
+
+    .articles-container {
+        flex-direction: column;
+    }
+
+    .article {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    .article h4 {
+        font-size: 14px;
+    }
+
+    .article p {
+        font-size: 15px;
+    }
+    p{
+        font-size: 18px;
+       }
+       h1{
+        font-size: 35px;
+       }
+       h2{
+                font-size: 29px;
+            }
+}
+       
+         
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content div {
+            flex: 1;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-newsletter input[type="email"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .footer-newsletter button {
+            padding: 10px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #e1a000;
+        }
+
+        .footer-social a {
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-social img{
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-social a:hover {
+            color: #f4b400;
+        }
+
+        .footer-legal a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+
+         /* Responsive Styles for max-width 480px */
+         @media (max-width: 480px) {
+           
+
+           .footer-content {
+               flex-direction: column;
+           }
+
+           .footer-content div {
+               text-align: center;
+           }
+
+           .footer-newsletter input[type="email"] {
+               width: calc(100% - 30px);
+               margin-bottom: 10px;
+           }
+
+           .footer-newsletter button {
+               width: 100%;
+           }
+       }
+                   
+a {
+   color: inherit; /* Inherit color from parent element */
+   text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+   text-decoration: none; /* Ensure underline is removed on hover */
+   color: inherit; /* Maintain the color on hover */
+}
+
+a:visited {
+   color: inherit; /* Maintain color consistency for visited links */
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">StrangeSage</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="latest.html">Latest</a></li>
+                <li><a href="post.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Section -->
+    <article>
+        <div class="container">
+            <h1>Top 5 E-commerce Platforms
+            </h1>
+            <div class="author-info">
+                <img src="" alt="Author Image" class="author-image">
+                <div class="author-details">
+                    <p class="author-name">june Dexter</p>
+                    <p class="publish-date">August 23, 2024</p>
+                </div>
+            </div>
+            <p class="article-intro">Starting an online store can be exciting, but choosing the right e-commerce platform can make all the difference in how smoothly your business runs. With so many options out there, it can be tough to know where to begin. Whether you’re just getting started or looking to upgrade your current setup, the right platform can help you create a seamless shopping experience for your customers and boost your sales. In this guide, we’ll take a look at the top 5 e-commerce platforms that make it easy to build, manage, and grow your online business.
+            </p>
+            <h2>1. Shopify</h2>
+<p>Shopify is often seen as the best e-commerce platform for businesses of all sizes because it’s so easy to use. Whether you’re a small business owner or running a larger operation, Shopify’s customizable templates and user-friendly tools make it simple to build and manage your store. If you’re looking for the best website to sell products, Shopify’s integrations with various sales channels make it a top choice. Plus, with its extensive app store, you can easily add features as your business grows, making it a fantastic option for both new and established entrepreneurs.</p>
+
+<h2>2. WooCommerce</h2>
+<p>WooCommerce is a great pick for small businesses, especially if you’re already using WordPress. It’s a top e-commerce platform for small businesses because it gives you complete control over your store’s design and functionality. Best of all, it’s one of the best free e-commerce platforms—the basic plugin is free, and you can add paid extensions if you need more features. WooCommerce is perfect for businesses that want a cost-effective, flexible solution that can grow alongside them. Its open-source nature also means you can customize your store to fit your exact needs.</p>
+
+<h2>3. BigCommerce</h2>
+<p>BigCommerce is known for its powerful tools and flexibility, making it one of the best e-commerce platforms for businesses looking to expand. It’s packed with features like advanced SEO, multi-channel selling, and robust analytics that help you grow your online presence. When considering BigCommerce pricing, you’ll find plans tailored to different business sizes, so you can pick the one that fits your needs. If you’re a small business aiming to scale, BigCommerce gives you the tools to handle more products and higher sales volumes with ease.</p>
+
+<h2>4. Wix eCommerce</h2>
+<p>Wix eCommerce is ideal for small businesses that want a beautiful, easy-to-build online store. It’s often called the best e-commerce platform for small businesses because of its drag-and-drop builder, which lets you create a stunning site without any coding know-how. If you’re focused on finding the best website to sell products with a design-first approach, Wix is an excellent choice. It comes with integrated payment options and marketing tools, so you can get your store up and running quickly and efficiently.</p>
+
+<h2>5. Squarespace</h2>
+<p>Squarespace is perfect for creatives and small businesses that want a sleek, professional-looking online presence. While it may not have all the advanced features of other platforms, it’s often considered the best e-commerce platform for small businesses that value design and simplicity. Squarespace makes it easy to create a visually stunning store, and it’s a strong option for those looking for an affordable and user-friendly solution. It’s also a great pick for the best free e-commerce platform if you’re looking for an all-in-one package that combines website and e-commerce functionality.</p>
+
+    <p><b>Conclusion-</b> the right e-commerce platform can make all the difference in how your online store performs and grows. Whether you need something simple and cost-effective like WooCommerce or a more robust solution like BigCommerce, there’s an option that fits your needs. Each of these platforms offers unique strengths, so think about what matters most to your business—whether it’s design, scalability, or ease of use—and you’ll be on your way to building a successful online store.
+    </p>
+        </div>
+    </article>
+
+    <!-- Related Articles Section -->
+    <section class="related-articles">
+        <div class="container">
+            <h3>Related Articles</h3>
+            <div class="articles-container">
+                <div class="article">
+                    <img src="" alt="Related Article 1">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="article">
+                    <img src="" alt="Related Article 2">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="article">
+                    <img src="" alt="Related Article 3">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="article">
+                    <img src="" alt="Related Article 3">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@strangesage.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-media-icons-23/800/instagram-512.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 StrangeSage. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
