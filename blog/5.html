@@ -407,6 +407,178 @@ a:hover {
 a:visited {
    color: inherit; /* Maintain color consistency for visited links */
 }
+
+
+
+        
+.ontainer {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    gap: 20px;
+}
+
+/* Main Post Container */
+.post-container {
+    width: 780px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.post-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post-subheading {
+    font-size: 20px;
+    margin: 20px 0 10px;
+    color: #444;
+}
+
+.post-content {
+    font-size: 19px;
+    color: black;
+    margin-bottom: 15px;
+}
+.post-content h2{
+    font-size: 20px;
+    margin: 20px 0 10px;
+    color: #444;
+}
+.post-content h1{
+    font-size: 23px;
+    margin: 20px 0 10px;
+    color: #444;
+}
+
+
+.subheading-img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Side Container */
+.side-container {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.categories, .tags {
+    margin-bottom: 20px;
+}
+
+.categories h3, .tags h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    margin-bottom: 8px;
+}
+
+.categories li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+
+/* For screens up to 768px wide */
+@media (max-width: 768px) {
+    .ontainer {
+        flex-direction: column;
+        max-width: 90%;
+        padding: 0;
+    }
+
+    .post-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .side-container {
+        width: 100%;
+    } 
+    
+.main-img {
+    width:100%;
+    height:auto;
+}
+
+    
+}
+
+
+/* For screens up to 480px wide */
+@media (max-width: 480px) {
+.ontainer {
+   padding: 0%;
+   margin: 0%;
+}
+    .post-title {
+        font-size: 24px;
+    }
+
+    .post-subheading {
+        font-size: 20px;
+    }
+
+    .post-content {
+        font-size: 18px;
+    }
+
+    .categories h3, .tags h3 {
+        font-size: 18px;
+    }
+
+    .tag {
+        font-size: 12px;
+    }
+    
+.main-img {
+    width:100%;
+    height:auto;
+}
+
+}
     </style>
 </head>
 <body>
@@ -430,51 +602,39 @@ a:visited {
     </header>
 
     <!-- Article Section -->
-    <article>
-        <div class="container">
-            <h1>Title of the Article</h1>
-            <div class="author-info">
-                <img src="" alt="Author Image" class="author-image">
-                <div class="author-details">
-                    <p class="author-name">Roma</p>
-                    <p class="publish-date">August 23, 2024</p>
-                </div>
-            </div>
-            <p class="article-intro"></p>
-            <img src="" alt="Article Image" class="ghost-image">
-                        <p></p>
-            <h2></h2>
-        </div>
-    </article>
+    <div class="ontainer">
+        <!-- Main Post Container -->
+        <div class="post-container">
+            <article class="post-article">
+                <img src="image.avif" alt="Main Post Image" class="main-img">
+<div class="post-content">
 
-    <!-- Related Articles Section -->
-    <section class="related-articles">
-        <div class="container">
-            <h3>Related Articles</h3>
-            <div class="articles-container">
-                <div class="article">
-                    <img src="" alt="Related Article 1">
-                    <h4></h4>
-                    <p></p>
-                </div>
-                <div class="article">
-                    <img src="" alt="Related Article 2">
-                    <h4></h4>
-                    <p></p>
-                </div>
-                <div class="article">
-                    <img src="" alt="Related Article 3">
-                    <h4></h4>
-                    <p></p>
-                </div>
-                <div class="article">
-                    <img src="" alt="Related Article 3">
-                    <h4></h4>
-                    <p></p>
-                </div>
-            </div>
+</div>
+            </article>
         </div>
-    </section>
+
+        <!-- Side Container -->
+        <aside class="side-container">
+            <section class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Tech</a></li>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">Finance</a></li>
+                </ul>
+            </section>
+            <section class="tags">
+                <h3>Tags</h3>
+                <div class="tag-list">
+                    <a href="#" class="tag">Progrmaing</a>
+                    <a href="#" class="tag">Gaming</a>
+                    <a href="#" class="tag">Ai</a>
+                    <a href="#" class="tag">SEO </a>
+                </div>
+            </section>
+        </aside>
+    </div>
 
     <!-- Footer Section -->
       <footer class="footer">
